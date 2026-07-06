@@ -1773,6 +1773,107 @@
   .slide-promo .vs { background: #1A1A1A; color: #FFFFFF; }
   .slide-promo .step { background: rgba(26, 26, 26, 0.92); color: #FFF4EC; }
   .slide-promo .step b { color: #FF9E70; }
+
+  /* ---------- MOBILE (celular) ---------- */
+
+  .post-item { overflow: hidden; }
+
+  @media (max-width: 640px) {
+    body { font-size: 14px; }
+
+    .topbar-inner { padding: 12px 16px; }
+    .brand { font-size: 15px; gap: 8px; }
+    .login-btn { padding: 9px 16px; font-size: 12px; }
+
+    .wrap { margin: 16px auto 40px; padding: 0 14px; gap: 16px; }
+
+    .main-card { padding: 20px 16px; }
+    .room-title { font-size: 22px; margin-bottom: 16px; }
+
+    .cover { height: 350px; border-radius: 16px; }
+
+    .slide-promo { padding: 18px 16px; }
+    .slide-promo .promo-title { font-size: 19px !important; }
+    .promo-sub { font-size: 10.5px; }
+    .promo-cols { flex-direction: column; gap: 8px; margin-top: 12px; }
+    .promo-col { padding: 12px 14px; font-size: 12.5px; gap: 5px; }
+    .promo-col.dark .big { font-size: 24px; }
+    .vs { padding: 6px 12px; font-size: 12px; }
+    .promo-grid { gap: 8px; margin-top: 12px; }
+    .promo-cell { padding: 10px 12px; font-size: 12px; border-radius: 10px; }
+    .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .step { font-size: 11.5px; padding: 11px 10px; }
+    .step b { font-size: 15px; }
+
+    .g-thumb { width: 74px; height: 74px; border-radius: 13px; }
+    .thumb-clone { transform: scale(0.203); left: -28px; }
+    .gallery { margin-bottom: 20px; }
+
+    .tools { gap: 10px; margin-bottom: 20px; }
+    .tool { height: 56px; border-radius: 13px; }
+
+    .meta { gap: 12px 16px; font-size: 13.5px; padding: 14px 0; margin-bottom: 20px; }
+
+    .desc { font-size: 14px; }
+    .desc h3 { font-size: 15px; margin: 22px 0 12px; }
+
+    .side-card { border-radius: 18px; }
+    .side-cover.claude-banner { height: 180px; }
+    .cb-title { font-size: 20px; }
+    .cb-title strong { font-size: 23px; }
+
+    .room-wrap { padding: 0 14px; }
+    .tabs { gap: 18px; margin-bottom: 16px; }
+    .tab { font-size: 13px; padding: 12px 2px 10px; }
+
+    .post-item { padding: 14px 14px 12px; }
+    .composer { padding: 14px; gap: 10px; }
+    #composer-card.collapsed .composer { padding: 12px 18px; }
+    .composer-foot { padding: 0 14px 12px; }
+    .poll-builder { padding: 0 14px 12px; }
+    .attach-preview { padding: 0 14px 10px; }
+    .post-imgs img { max-height: 220px; }
+    .post-imgs.single img { max-height: 340px; }
+    .cmt.reply { margin-left: 22px; }
+    .reply-form { margin-left: 22px; }
+    .post-actions { flex-wrap: wrap; gap: 4px; }
+    .act { padding: 6px 10px; font-size: 12.5px; }
+
+    /* inputs com 16px+ não dão zoom automático no iPhone */
+    .login-card input, .composer textarea,
+    .cmt-form input, .reply-form input, .poll-builder input,
+    .search-box input, .prof-edit input, .prof-edit textarea,
+    .edit-box input, .edit-box textarea { font-size: 16px; }
+    #new-title { font-size: 16px !important; }
+
+    .paywall-card, .paymethod-card { padding: 30px 22px 26px; border-radius: 20px; }
+    .paywall-card h1 { font-size: 22px; }
+    .paymethod-card h1 { font-size: 20px; }
+    .price { font-size: 28px; }
+    body.show-paywall #paywall-view,
+    body.show-paymethod #paymethod-view { padding: 30px 14px 60px; }
+
+    .login-center { padding: 90px 16px 50px; }
+    .login-card { border-radius: 18px; }
+
+    #lightbox { padding: 14px; }
+
+    #toast { bottom: 20px; padding: 11px 20px 11px 14px; font-size: 13px; max-width: calc(100vw - 32px); }
+
+    .onboard { padding: 14px 16px; }
+
+    .bell-panel { width: min(300px, calc(100vw - 32px)); }
+    .user-menu { width: min(240px, calc(100vw - 32px)); }
+  }
+
+  @media (max-width: 380px) {
+    .cover { height: 385px; }
+    .g-thumb { width: 66px; height: 66px; }
+    .thumb-clone { transform: scale(0.181); left: -25px; }
+    .main-card { padding: 18px 13px; }
+    .chips { gap: 6px; }
+    .chip { padding: 5px 11px; font-size: 12px; }
+  }
 </style>
 </head>
 <body>
