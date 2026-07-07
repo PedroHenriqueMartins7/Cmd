@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coffee Club — comunidade</title>
-<meta name="description" content="Coffee Club — a comunidade de quem constrói com IA: marketing, vendas e contratos, juntos e em tempo real.">
+<title>Comunidade | Kofy Community</title>
+<meta name="description" content="Kofy Community — a comunidade de quem constrói com IA: marketing, vendas e contratos, juntos e em tempo real.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Coffee Club — comunidade">
+<meta property="og:title" content="Kofy Community — comunidade">
 <meta property="og:description" content="Construa em público com IA. Encontros ao vivo, postagens diárias e network com quem está construindo de verdade. Grátis por 20 dias, depois R$ 19/mês.">
-<meta property="og:site_name" content="Coffee Club">
+<meta property="og:site_name" content="Kofy Community">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#111111">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M17%2028h22v9a9%209%200%200%201-9%209h-4a9%209%200%200%201-9-9z%22%2F%3E%3Cpath%20d%3D%22M39%2030h3.5a5.5%205.5%200%200%201%200%2011H38%22%2F%3E%3Cline%20x1%3D%2215%22%20y1%3D%2252%22%20x2%3D%2241%22%20y2%3D%2252%22%2F%3E%3Cpath%20d%3D%22M22%2022c2-2.5-2-4.5%200-7%22%2F%3E%3Cpath%20d%3D%22M29%2022c2-2.5-2-4.5%200-7%22%2F%3E%3Cpath%20d%3D%22M36%2022c2-2.5-2-4.5%200-7%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath fill='%23FFFFFF' d='M32 12c11.6 0 21 7.6 21 17s-9.4 17-21 17c-2.1 0-4.2-.25-6.1-.7L16 50l2.4-8.2C14.1 38.7 11 34.1 11 29c0-9.4 9.4-17 21-17z'/%3E%3Cpath fill='none' stroke='%23111111' stroke-width='4' stroke-linecap='round' d='M32 18c-4.5 4.5 4.5 7.5 0 12s4.5 7.5 0 12'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -80,6 +80,8 @@
   .brand:hover { text-decoration: none; }
 
   .brand-icon { flex-shrink: 0; display: block; }
+  .brand-word { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+  .brand-sub { font-weight: 500; color: var(--muted); margin-left: -3px; }
 
   .login-btn {
     border: 1px solid var(--border);
@@ -769,7 +771,7 @@
   body.show-room .footer { display: none; }
 
   .room-wrap {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto 80px;
     padding: 0 20px;
   }
@@ -832,8 +834,8 @@
 
   .room-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 330px;
-    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 28px;
     align-items: start;
   }
 
@@ -885,7 +887,7 @@
     pointer-events: none;
   }
 
-  .post-h { font-weight: 700; font-size: 15.5px; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .post-h { font-weight: 700; font-size: 18px; margin-bottom: 6px; letter-spacing: -0.01em; }
   .post-meta { font-size: 12px; color: var(--muted-2); }
 
   /* ---------- MEMBROS ---------- */
@@ -938,8 +940,8 @@
   .sobre-card hr { border: none; border-top: 1px solid var(--border-soft); margin: 16px 0; }
 
   .avatar {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: #111111;
     color: #FFFFFF;
@@ -969,13 +971,15 @@
   .composer textarea::placeholder { color: var(--muted-2); }
 
   /* composer recolhido — vira uma pílula "Escreva algo..." */
-  #composer-card.collapsed { border-radius: 999px; cursor: text; }
-  #composer-card.collapsed .composer { padding: 13px 22px; align-items: center; }
+  #composer-card.collapsed { border-radius: 20px; cursor: text; }
+  #composer-card.collapsed .composer { padding: 16px 20px; align-items: center; }
+  #composer-card.collapsed .avatar { width: 44px; height: 44px; font-size: 17px; }
   #composer-card.collapsed .composer textarea {
-    min-height: 24px;
-    height: 24px;
+    min-height: 26px;
+    height: 26px;
     padding-top: 0;
     overflow: hidden;
+    font-size: 15px;
   }
   #composer-card.collapsed .composer-foot,
   #composer-card.collapsed .poll-builder,
@@ -1001,11 +1005,11 @@
   .post-btn:disabled { opacity: 0.35; cursor: not-allowed; }
   .post-btn:not(:disabled):hover { background: #000; }
 
-  .post-item { padding: 18px 20px 14px; }
+  .post-item { padding: 22px 24px 16px; }
 
   .post-head { display: flex; align-items: center; gap: 11px; margin-bottom: 10px; }
-  .post-head .name { font-weight: 600; font-size: 14px; line-height: 1.3; }
-  .post-head .when { font-size: 12px; color: var(--muted-2); display: block; }
+  .post-head .name { font-weight: 600; font-size: 15px; line-height: 1.3; }
+  .post-head .when { font-size: 12.5px; color: var(--muted-2); display: block; }
 
   .post-menu { margin-left: auto; position: relative; }
 
@@ -1057,9 +1061,9 @@
   .menu button.danger { color: #E5483F; }
   .menu button.danger:hover { background: #FDEEED; }
 
-  .post-body-text { font-size: 14.5px; white-space: pre-wrap; word-break: break-word; margin-bottom: 12px; }
+  .post-body-text { font-size: 15.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; margin-bottom: 12px; }
 
-  .post-body-text a, .cmt-bubble a {
+  .post-body-text a {
     color: var(--ink);
     font-weight: 500;
     text-decoration: underline;
@@ -1100,29 +1104,92 @@
 
   .cmts { border-top: 1px solid var(--border-soft); margin-top: 10px; padding-top: 12px; }
 
-  .cmt { display: flex; gap: 10px; margin-bottom: 10px; }
-  .cmt .avatar { width: 28px; height: 28px; font-size: 12px; }
+  .cmt { display: flex; gap: 10px; }
+  .cmt .avatar { width: 28px; height: 28px; font-size: 12px; flex-shrink: 0; }
+  .cmt-main { flex: 1; min-width: 0; }
   .cmt-bubble {
-    background: var(--btn-bg);
-    border-radius: 12px;
-    padding: 8px 12px;
-    font-size: 13.5px;
-    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.55;
   }
-  .cmt-bubble .name { font-weight: 600; margin-right: 6px; }
+  .cmt-bubble .name { font-weight: 600; margin-right: 4px; }
+  .cmt-bubble .cmt-when { color: var(--muted-2); font-size: 12px; }
+  .cmt-bubble .cmt-text { margin-top: 4px; white-space: pre-wrap; word-break: break-word; }
+  .cmt-bubble code { background: var(--btn-bg); border-radius: 5px; padding: 1px 5px; font-size: 12.5px; }
+  .cmt-bubble a { color: #2563EB; font-weight: 500; text-decoration: none; word-break: break-all; }
+  .cmt-bubble a:hover { text-decoration: underline; }
 
-  .cmt-form { display: flex; gap: 8px; }
+  .cmt-foot { display: flex; align-items: center; gap: 16px; margin: 6px 4px 0; }
+
+  .cmt-like {
+    background: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font: 500 12.5px "Inter", sans-serif;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 2px 0;
+  }
+  .cmt-like svg {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+  .cmt-like:hover { color: var(--ink); }
+  .cmt-like.liked { color: #E5483F; }
+  .cmt-like.liked svg { fill: #E5483F; stroke: #E5483F; }
+
+  .cmt-form { display: flex; gap: 8px; margin-bottom: 16px; align-items: stretch; }
 
   .cmt-form input {
     flex: 1;
+    min-width: 0;
     border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 9px 16px;
+    border-radius: 18px;
+    padding: 12px 16px;
     font: 400 13.5px "Inter", sans-serif;
     outline: none;
+    background: var(--card);
+    color: var(--ink);
   }
 
+  .cmt-form input::placeholder { color: var(--muted-2); }
   .cmt-form input:focus { border-color: var(--muted-2); }
+
+  .cmt-send {
+    width: 48px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--card);
+    color: var(--muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .cmt-send svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+  .cmt-send:hover { border-color: var(--muted-2); color: var(--ink); }
 
   .empty-feed {
     text-align: center;
@@ -1283,12 +1350,65 @@
     object-fit: cover;
     border-radius: 14px;
     display: block;
-    cursor: zoom-in;
     transition: opacity 0.15s;
   }
 
-  .post-imgs.single img { max-height: 520px; }
-  .post-imgs img:hover { opacity: 0.92; }
+  .post-imgs.single img {
+    height: auto;
+    max-height: 640px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  #feed .post-imgs img:hover { opacity: 0.92; }
+
+  /* ---------- CARROSSEL DE IMAGENS ---------- */
+
+  .post-car { margin-bottom: 12px; }
+  .car-frame { position: relative; }
+  .car-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    border-radius: 16px;
+  }
+  .car-track::-webkit-scrollbar { display: none; }
+  .car-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    max-height: 640px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    display: block;
+  }
+  .car-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 46px;
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-size: 36px;
+    line-height: 1;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 1;
+    transition: background 0.15s;
+  }
+  .car-btn.prev { left: 0; border-radius: 16px 0 0 16px; background: linear-gradient(to right, rgba(0,0,0,0.18), transparent); }
+  .car-btn.next { right: 0; border-radius: 0 16px 16px 0; background: linear-gradient(to left, rgba(0,0,0,0.18), transparent); }
+  .car-btn.prev:hover { background: linear-gradient(to right, rgba(0,0,0,0.38), transparent); }
+  .car-btn.next:hover { background: linear-gradient(to left, rgba(0,0,0,0.38), transparent); }
+  .car-btn.off { display: none; }
+  .car-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+  .car-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+  .car-dots span.on { background: var(--muted); }
 
   #lightbox {
     position: fixed;
@@ -1611,19 +1731,30 @@
   .prof-logout:hover { background: #FDEEED; }
   body.dark .prof-logout:hover { background: #3A1F1D; }
 
+  /* ---------- MODAL DE POST ---------- */
+
+  #post-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 80; display: flex; align-items: flex-start; justify-content: center; padding: 34px 20px; }
+  .post-modal-card { position: relative; background: var(--card); border-radius: 22px; width: 100%; max-width: 800px; min-height: min(460px, calc(100vh - 68px)); max-height: calc(100vh - 68px); overflow-y: auto; box-shadow: 0 24px 70px rgba(0,0,0,0.28); padding: 34px 10px 10px; }
+  .pm-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: var(--muted-2); font-size: 17px; cursor: pointer; padding: 6px 9px; border-radius: 10px; line-height: 1; z-index: 2; }
+  .pm-close:hover { color: var(--ink); background: var(--btn-bg); }
+  .post-modal-card .post-item { border: none; background: none; padding: 8px 26px 22px; }
+  .post-modal-card .ribbon { right: 26px; top: 12px; }
+  #feed .post-item { cursor: pointer; }
+  #feed { display: flex; flex-direction: column; gap: 18px; }
+
   .avatar { overflow: hidden; }
   .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
   .pf-photo-row { display: flex; align-items: center; gap: 12px; }
   .pf-photo-row .avatar { width: 46px; height: 46px; font-size: 18px; }
 
-  .cmt-block { margin-bottom: 4px; }
+  .cmt-block { margin-bottom: 16px; }
   .cmt-bubble { position: relative; padding-right: 28px; }
-  .cmt-del { position: absolute; top: 6px; right: 8px; background: none; border: none; color: var(--muted-2); font-size: 11px; cursor: pointer; padding: 2px 4px; border-radius: 6px; line-height: 1; }
+  .cmt-del { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--muted-2); font-size: 11px; cursor: pointer; padding: 2px 4px; border-radius: 6px; line-height: 1; }
   .cmt-del:hover { color: #E5483F; }
-  .cmt.reply { margin-left: 38px; }
-  .reply-btn { display: block; background: none; border: none; font: 600 11.5px "Inter", sans-serif; color: var(--muted-2); cursor: pointer; padding: 4px 0 0; }
+  .cmt.reply { margin-left: 38px; margin-top: 10px; }
+  .reply-btn { background: none; border: none; font: 600 12.5px "Inter", sans-serif; color: var(--muted); cursor: pointer; padding: 2px 0; }
   .reply-btn:hover { color: var(--ink); }
-  .reply-form { display: flex; gap: 8px; margin: 6px 0 10px 38px; }
+  .reply-form { display: flex; gap: 8px; margin: 10px 0 10px 38px; }
   .reply-form input { flex: 1; border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; font: 400 13px "Inter", sans-serif; outline: none; background: var(--card); color: var(--ink); }
   .reply-form input:focus { border-color: var(--muted-2); }
 
@@ -1844,9 +1975,13 @@
     .poll-builder { padding: 0 14px 12px; }
     .attach-preview { padding: 0 14px 10px; }
     .post-imgs img { max-height: 220px; }
-    .post-imgs.single img { max-height: 340px; }
+    .post-imgs.single img, .car-track img { max-height: 420px; }
+    .car-btn { width: 34px; font-size: 28px; }
     .cmt.reply { margin-left: 22px; }
     .reply-form { margin-left: 22px; }
+    #post-modal { padding: 12px; }
+    .post-modal-card { max-height: calc(100vh - 24px); border-radius: 18px; }
+    .post-modal-card .post-item { padding: 6px 14px 16px; }
     .post-actions { flex-wrap: wrap; gap: 4px; }
     .act { padding: 6px 10px; font-size: 12.5px; }
 
@@ -1892,8 +2027,8 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#">
-      <svg class="brand-icon" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#111111" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 28h22v9a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z"/><path d="M39 30h3.5a5.5 5.5 0 0 1 0 11H38"/><line x1="15" y1="52" x2="41" y2="52"/><path d="M22 22c2-2.5-2-4.5 0-7"/><path d="M29 22c2-2.5-2-4.5 0-7"/><path d="M36 22c2-2.5-2-4.5 0-7"/></g></svg>
-      coffee club
+      <svg class="brand-icon" width="27" height="27" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10c12.7 0 23 8.3 23 18.5S44.7 47 32 47c-2.3 0-4.6-.27-6.7-.78L14 52l2.7-9.3C12.2 39.4 9 34.7 9 28.5 9 18.3 19.3 10 32 10z"/><path d="M32 16.5c-5 5 5 8 0 13s5 8 0 13"/></g></svg>
+      <span class="brand-word">kofy</span><span class="brand-sub">community</span>
     </a>
     <div class="nav-right">
       <button class="nav-icon" id="dark-toggle" title="modo escuro">
@@ -1925,7 +2060,7 @@
 
   <!-- ===== MAIN ===== -->
   <main class="card main-card">
-    <h1 class="room-title">Coffee Club</h1>
+    <h1 class="room-title">Kofy Community</h1>
 
     <div class="cover">
       <div class="slide slide-promo on" id="slide-1">
@@ -1937,7 +2072,7 @@
           </div>
           <span class="vs">VS</span>
           <div class="promo-col">
-            <span class="promo-sub">Depois · Coffee Club</span>
+            <span class="promo-sub">Depois · Kofy Community</span>
             <span class="promo-title" style="font-size:22px">Construindo junto</span>
             <span>Sites → Agentes → Marketing → Contratos fechados.</span>
           </div>
@@ -1945,7 +2080,7 @@
       </div>
 
       <div class="slide slide-promo" id="slide-2">
-        <span class="promo-sub">Coffee Club</span>
+        <span class="promo-sub">Kofy Community</span>
         <span class="promo-title">O que tem dentro</span>
         <div class="promo-grid">
           <div class="promo-cell">Encontros semanais ao vivo</div>
@@ -2027,7 +2162,7 @@
         <li><span class="ico">❌</span> Ver todo mundo falando de IA e não saber por onde começar</li>
       </ul>
 
-      <h3>O Coffee Club é pra você.</h3>
+      <h3>A Kofy Community é pra você.</h3>
       <ul>
         <li><span class="ico">⚡</span> Grátis por 20 dias — depois R$ 19/mês ( por enquanto )</li>
         <li><span class="ico">✅</span> Sem fidelidade, cancele quando quiser</li>
@@ -2051,10 +2186,10 @@
       </div>
     </div>
     <div class="side-body">
-      <div class="side-title">Coffee Club</div>
-      <a class="side-link" href="#">coffee.club</a>
+      <div class="side-title">Kofy Community</div>
+      <a class="side-link" href="#">kofy.community</a>
 
-      <p class="side-desc">O Coffee Club é uma comunidade de builders. Alguns conteúdos são gratuitos, outros pagos. Tem gente construindo negócio de verdade com IA por aqui. Você também pode!</p>
+      <p class="side-desc">A Kofy Community é uma comunidade de builders. Alguns conteúdos são gratuitos, outros pagos. Tem gente construindo negócio de verdade com IA por aqui. Você também pode!</p>
 
       <div class="stats">
         <div><span class="n">0</span><span class="l">membros</span></div>
@@ -2063,7 +2198,7 @@
       </div>
 
       <a class="cta" href="#login">COMEÇAR GRÁTIS — 20 DIAS</a>
-      <div class="powered">powered by <a href="#">coffee.club</a></div>
+      <div class="powered">powered by <a href="#">kofy.community</a></div>
     </div>
   </aside>
 
@@ -2076,7 +2211,7 @@
 
   <div class="login-center">
     <div class="login-card">
-      <h1>Entrar no Coffee Club</h1>
+      <h1>Entrar na Kofy Community</h1>
       <p class="sub">Digite seu email e enviaremos um código de acesso. Sem senha.</p>
 
       <form id="form" novalidate>
@@ -2100,6 +2235,14 @@
   <div class="profile-card" id="profile-card"></div>
 </div>
 
+<!-- ===== MODAL DE POST ===== -->
+<div id="post-modal" hidden>
+  <div class="post-modal-card">
+    <button class="pm-close" title="fechar">✕</button>
+    <div id="post-modal-body"></div>
+  </div>
+</div>
+
 <!-- ===== TOAST ===== -->
 <div id="toast">
   <svg viewBox="0 0 24 24">
@@ -2119,7 +2262,7 @@
 <div id="paywall-view">
   <div class="paywall-card">
     <h1 id="pay-title">Falta só um passo</h1>
-    <p class="paywall-sub">O <span class="hl">Coffee Club</span> é exclusivo para assinantes. Ative sua assinatura e entre agora na comunidade.</p>
+    <p class="paywall-sub">A <span class="hl">Kofy Community</span> é exclusiva para assinantes. Ative sua assinatura e entre agora na comunidade.</p>
 
     <ul class="benefits">
       <li>Encontros semanais ao vivo</li>
@@ -2247,7 +2390,7 @@
         <span class="avatar">P</span>
         <div class="info">
           <div class="name">pedromartins</div>
-          <div class="bio">Fundador do Coffee Club — sites, tráfego e IA aplicada</div>
+          <div class="bio">Fundador da Kofy Community — sites, tráfego e IA aplicada</div>
         </div>
         <span class="badge">ADMIN</span>
       </div>
@@ -2263,7 +2406,7 @@
 
     <div class="tab-section" id="tab-sobre">
       <div class="card sobre-card">
-        <h4>O que é o Coffee Club</h4>
+        <h4>O que é a Kofy Community</h4>
         <p>A comunidade de freelancers que usam IA e marketing digital pra fechar mais contratos. Aqui a gente constrói em público: posta o que está fazendo, troca feedback e aplica IA de verdade no dia a dia — produto, marketing, vendas e operação.</p>
         <hr>
         <h4>Regras da room</h4>
@@ -2281,8 +2424,8 @@
 
       <aside class="card room-side">
         <div class="side-body">
-          <div class="side-title">Coffee Club</div>
-          <a class="side-link" href="#">coffee.club</a>
+          <div class="side-title">Kofy Community</div>
+          <a class="side-link" href="#">kofy.community</a>
           <p class="side-desc">A comunidade de quem constrói em público. Encontros semanais, postagens diárias, enquetes e network com quem está construindo em tempo real.</p>
           <div class="stats">
             <div><span class="n">0</span><span class="l">membros</span></div>
@@ -2296,7 +2439,21 @@
   </div><!-- /room-wrap -->
 </div><!-- /room-view -->
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+  /* ==================================================================
+     SUPABASE — modo nuvem (cadastro real + feed compartilhado)
+     Preencha as duas constantes abaixo com os dados do seu projeto
+     (Supabase → Settings → API). Enquanto estiverem vazias, o site
+     funciona em modo demonstração (dados só neste navegador).
+     Passo a passo completo em saidas/SUPABASE.md
+     ================================================================== */
+  const SUPABASE_URL = '';
+  const SUPABASE_ANON_KEY = '';
+  const sb = (SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase)
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    : null;
+
   /* ---------- estado de login ---------- */
   (function () {
     const user = localStorage.getItem('cmd-club-user');
@@ -2477,6 +2634,16 @@
     });
   }
 
+  /* markdown leve nos comentários: **negrito**, *itálico*, `código` (aplicar sobre texto já escapado) */
+  function mdInline(s) {
+    return s
+      .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+      .replace(/\*([^*\n]+)\*/g, '<i>$1</i>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>');
+  }
+
+  function cmtBody(t) { return linkify(mdInline(esc(t))); }
+
   function photoOf(em) {
     try { return ((JSON.parse(localStorage.getItem('coffee-club-profiles')) || {})[em] || {}).photo || null; }
     catch (e) { return null; }
@@ -2531,11 +2698,11 @@
   if (loadPosts().length === 0) {
     savePosts([{
       id: 1,
-      author: 'pedromartins@coffee.club',
+      author: 'pedromartins@kofy.community',
       title: '👋 Boas-vindas ao primeiro post da room',
       cat: 'Discussão geral',
       pinned: false,
-      text: 'Esse é o Coffee Club: a comunidade de quem constrói com IA em público. Poste o que você está construindo, peça ajuda quando travar e compartilhe o que funcionou. Bora?',
+      text: 'Essa é a Kofy Community: a comunidade de quem constrói com IA em público. Poste o que você está construindo, peça ajuda quando travar e compartilhe o que funcionou. Bora?',
       ts: Date.now(),
       likes: [],
       comments: []
@@ -2558,11 +2725,21 @@
   const ICON_CLIP = '<svg viewBox="0 0 24 24"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>';
   const ICON_EDIT = '<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>';
   const ICON_SHARE = '<svg viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+  const THUMB = '<svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>';
+  const ARROW_SEND = '<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
 
   function renderImgs(p) {
     if (!p.images || !p.images.length) return '';
-    const single = p.images.length === 1 ? ' single' : '';
-    return '<div class="post-imgs' + single + '">' + p.images.map(s => '<img src="' + s + '">').join('') + '</div>';
+    if (p.images.length === 1)
+      return '<div class="post-imgs single"><img src="' + p.images[0] + '"></div>';
+    return '<div class="post-car">' +
+      '<div class="car-frame">' +
+      '<div class="car-track">' + p.images.map(s => '<img src="' + s + '">').join('') + '</div>' +
+      '<button class="car-btn prev off" data-car="-1" title="anterior">‹</button>' +
+      '<button class="car-btn next" data-car="1" title="próxima">›</button>' +
+      '</div>' +
+      '<div class="car-dots">' + p.images.map((_, i) => '<span' + (i === 0 ? ' class="on"' : '') + '></span>').join('') + '</div>' +
+      '</div>';
   }
 
   function renderFilesOf(p) {
@@ -2610,22 +2787,44 @@
       nameOf(p.author).toLowerCase().includes(term));
     if (!posts.length) {
       feedEl.innerHTML = '<div class="empty-feed">Nenhuma postagem aqui ainda. Seja o primeiro!</div>';
+      if (openPostId != null) renderPostModal();
       return;
     }
-    feedEl.innerHTML = posts.map(p => {
+    feedEl.innerHTML = posts.map(p => postHTML(p, user, false)).join('');
+    if (openPostId != null) renderPostModal();
+  }
+
+  var openPostId = null;
+
+  function postHTML(p, user, inModal) {
       const liked = p.likes.includes(user);
       const cmts = p.comments.map((c, ci) => {
-        const reps = (c.replies || []).map((rp, ri) =>
-          '<div class="cmt reply">' + avSpan(rp.author) +
-          '<div class="cmt-bubble"><span class="name">' + esc(nameOf(rp.author)) + '</span>' + linkify(esc(rp.text)) +
-          (rp.author === user ? '<button class="cmt-del" data-del-reply="' + ci + ':' + ri + '" title="apagar">✕</button>' : '') +
-          '</div></div>'
-        ).join('');
+        const cLikes = c.likes || [];
+        const reps = (c.replies || []).map((rp, ri) => {
+          const rLikes = rp.likes || [];
+          return '<div class="cmt reply">' + avSpan(rp.author) +
+            '<div class="cmt-main"><div class="cmt-bubble">' +
+            '<span class="name">' + esc(nameOf(rp.author)) + '</span>' +
+            (rp.ts ? '<span class="cmt-when">· ' + timeAgo(rp.ts) + '</span>' : '') +
+            '<div class="cmt-text">' + cmtBody(rp.text) + '</div>' +
+            (rp.author === user ? '<button class="cmt-del" data-del-reply="' + ci + ':' + ri + '" title="apagar">✕</button>' : '') +
+            '</div>' +
+            '<div class="cmt-foot">' +
+            '<button class="cmt-like' + (rLikes.includes(user) ? ' liked' : '') + '" data-like-reply="' + ci + ':' + ri + '">' + THUMB + ' ' + rLikes.length + '</button>' +
+            '</div></div></div>';
+        }).join('');
         return '<div class="cmt-block">' +
           '<div class="cmt">' + avSpan(c.author) +
-          '<div class="cmt-bubble"><span class="name">' + esc(nameOf(c.author)) + '</span>' + linkify(esc(c.text)) +
+          '<div class="cmt-main"><div class="cmt-bubble">' +
+          '<span class="name">' + esc(nameOf(c.author)) + '</span>' +
+          (c.ts ? '<span class="cmt-when">· ' + timeAgo(c.ts) + '</span>' : '') +
+          '<div class="cmt-text">' + cmtBody(c.text) + '</div>' +
           (c.author === user ? '<button class="cmt-del" data-del-cmt="' + ci + '" title="apagar">✕</button>' : '') +
-          '<button class="reply-btn" data-reply="' + ci + '">responder</button></div></div>' +
+          '</div>' +
+          '<div class="cmt-foot">' +
+          '<button class="cmt-like' + (cLikes.includes(user) ? ' liked' : '') + '" data-like-cmt="' + ci + '">' + THUMB + ' ' + cLikes.length + '</button>' +
+          '<button class="reply-btn" data-reply="' + ci + '">responder</button>' +
+          '</div></div></div>' +
           reps +
           '<div class="reply-form" data-rf="' + ci + '" hidden>' +
           '<input type="text" placeholder="Responder..." maxlength="400">' +
@@ -2667,11 +2866,40 @@
         lastCmt +
         '<button class="act sv' + (isSaved ? ' saved' : '') + '" data-save>' + BOOKMARK + '</button>' +
         '</div>' +
-        '<div class="cmts" hidden>' + cmts +
-        '<div class="cmt-form"><input type="text" placeholder="Escreva um comentário..." maxlength="400">' +
-        '<button class="post-btn" data-send-cmt>enviar</button></div></div>' +
+        (inModal
+          ? '<div class="cmts">' +
+            '<div class="cmt-form"><input type="text" placeholder="Adicionar um comentário... (aceita markdown)" maxlength="400">' +
+            '<button class="cmt-send" data-send-cmt title="enviar">' + ARROW_SEND + '</button></div>' +
+            cmts + '</div>'
+          : '') +
         '</div>';
-    }).join('');
+  }
+
+  function renderPostModal() {
+    if (openPostId == null) return;
+    const p = loadPosts().find(x => x.id === openPostId);
+    const body = document.getElementById('post-modal-body');
+    if (!p) { closePostModal(); return; }
+    body.innerHTML = postHTML(p, me(), true);
+  }
+
+  function openPostModal(id, focusCmt) {
+    openPostId = id;
+    renderPostModal();
+    document.getElementById('post-modal').hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (focusCmt) {
+      const inp = document.querySelector('#post-modal-body .cmt-form input');
+      if (inp) inp.focus();
+    }
+  }
+
+  function closePostModal() {
+    openPostId = null;
+    const pm = document.getElementById('post-modal');
+    pm.hidden = true;
+    document.getElementById('post-modal-body').innerHTML = '';
+    document.body.style.overflow = '';
   }
 
   const newTitle = document.getElementById('new-title');
@@ -2881,7 +3109,7 @@
   const PROF_KEY = 'coffee-club-profiles';
   function loadProfiles() { try { return JSON.parse(localStorage.getItem(PROF_KEY)) || {}; } catch (e) { return {}; } }
   function saveProfiles(p) { localStorage.setItem(PROF_KEY, JSON.stringify(p)); }
-  function bioOf(em) { return (loadProfiles()[em] || {}).bio || 'Membro do Coffee Club'; }
+  function bioOf(em) { return (loadProfiles()[em] || {}).bio || 'Membro da Kofy Community'; }
 
   if (me()) {
     document.getElementById('um-name').textContent = nameOf(me());
@@ -3146,14 +3374,16 @@
     if (e.key === 'Escape' && !lightbox.hidden) { lightbox.hidden = true; lbImg.src = ''; }
   });
 
-  feedEl.addEventListener('click', e => {
-    if (e.target.matches('.post-imgs img')) {
-      lbImg.src = e.target.src;
-      lightbox.hidden = false;
+  function postAreaClick(e) {
+    const car = e.target.closest('[data-car]');
+    if (car) {
+      const track = car.closest('.post-car').querySelector('.car-track');
+      track.scrollBy({ left: track.clientWidth * Number(car.dataset.car), behavior: 'smooth' });
       return;
     }
     const item = e.target.closest('.post-item');
     if (!item) return;
+    const inModal = !!item.closest('#post-modal');
     const id = Number(item.dataset.id);
     const posts = loadPosts();
     const p = posts.find(x => x.id === id);
@@ -3165,7 +3395,7 @@
     }
 
     if (e.target.closest('[data-share-post]')) {
-      const payload = (p.title ? p.title + String.fromCharCode(10) : '') + (p.text || '') + String.fromCharCode(10) + '— ' + nameOf(p.author) + ' no Coffee Club';
+      const payload = (p.title ? p.title + String.fromCharCode(10) : '') + (p.text || '') + String.fromCharCode(10) + '— ' + nameOf(p.author) + ' na Kofy Community';
       if (navigator.share) {
         navigator.share({ text: payload }).catch(() => {});
       } else {
@@ -3180,6 +3410,37 @@
       si === -1 ? sv.push(id) : sv.splice(si, 1);
       saveSaved(sv);
       renderFeed();
+      return;
+    }
+
+    const lkc = e.target.closest('[data-like-cmt]');
+    if (lkc) {
+      const u = me();
+      const c = p.comments[+lkc.dataset.likeCmt];
+      c.likes = c.likes || [];
+      const i = c.likes.indexOf(u);
+      if (i === -1) { c.likes.push(u); if (c.author !== u) pushNotif(c.author, nameOf(u) + ' curtiu seu comentário'); }
+      else c.likes.splice(i, 1);
+      savePosts(posts);
+      renderFeed();
+      const box = feedEl.querySelector('[data-id="' + id + '"] .cmts');
+      if (box) box.hidden = false;
+      return;
+    }
+
+    const lkr = e.target.closest('[data-like-reply]');
+    if (lkr) {
+      const u = me();
+      const parts = lkr.dataset.likeReply.split(':');
+      const rp = p.comments[+parts[0]].replies[+parts[1]];
+      rp.likes = rp.likes || [];
+      const i = rp.likes.indexOf(u);
+      if (i === -1) { rp.likes.push(u); if (rp.author !== u) pushNotif(rp.author, nameOf(u) + ' curtiu sua resposta'); }
+      else rp.likes.splice(i, 1);
+      savePosts(posts);
+      renderFeed();
+      const box = feedEl.querySelector('[data-id="' + id + '"] .cmts');
+      if (box) box.hidden = false;
       return;
     }
 
@@ -3222,7 +3483,7 @@
       if (!text) return;
       const c = p.comments[+sr.dataset.sendReply];
       c.replies = c.replies || [];
-      c.replies.push({ author: me(), text, ts: Date.now() });
+      c.replies.push({ author: me(), text, ts: Date.now(), likes: [] });
       pushNotif(c.author, nameOf(me()) + ' respondeu seu comentário');
       savePosts(posts);
       renderFeed();
@@ -3273,7 +3534,7 @@
       const btn = e.target.closest('button');
       let payload;
       if (e.target.closest('[data-copylink]')) payload = location.href.split('#')[0] + '#room';
-      else if (e.target.closest('[data-share]')) payload = '"' + p.text + '" — ' + nameOf(p.author) + ' na room do Coffee Club';
+      else if (e.target.closest('[data-share]')) payload = '"' + p.text + '" — ' + nameOf(p.author) + ' na room da Kofy Community';
       else payload = p.text;
       navigator.clipboard.writeText(payload).then(() => {
         const orig = btn.innerHTML;
@@ -3313,23 +3574,25 @@
       savePosts(posts);
       renderFeed();
     } else if (e.target.closest('[data-toggle-cmt]')) {
-      const box = item.querySelector('.cmts');
-      box.hidden = !box.hidden;
-      if (!box.hidden) box.querySelector('input').focus();
+      if (inModal) {
+        const inp = item.querySelector('.cmt-form input');
+        if (inp) inp.focus();
+      } else openPostModal(id, true);
     } else if (e.target.closest('[data-send-cmt]')) {
       const input = item.querySelector('.cmt-form input');
       const text = input.value.trim();
       if (!text) return;
-      p.comments.push({ author: me(), text, ts: Date.now() });
+      p.comments.push({ author: me(), text, ts: Date.now(), likes: [] });
       pushNotif(p.author, nameOf(me()) + ' comentou no seu post' + (p.title ? ' "' + p.title + '"' : ''));
       savePosts(posts);
       renderFeed();
-      const box = feedEl.querySelector('[data-id="' + id + '"] .cmts');
-      if (box) box.hidden = false;
+    } else if (!inModal &&
+      !e.target.closest('button, a, input, textarea, .poll, .avatar, .menu, .edit-box')) {
+      openPostModal(id, false);
     }
-  });
+  }
 
-  feedEl.addEventListener('keydown', e => {
+  function postAreaKeydown(e) {
     if (e.key === 'Enter' && e.target.matches('.cmt-form input')) {
       e.preventDefault();
       e.target.closest('.cmt-form').querySelector('[data-send-cmt]').click();
@@ -3338,13 +3601,39 @@
       e.preventDefault();
       e.target.closest('.reply-form').querySelector('[data-send-reply]').click();
     }
+  }
+
+  feedEl.addEventListener('click', postAreaClick);
+  feedEl.addEventListener('keydown', postAreaKeydown);
+
+  const postModalEl = document.getElementById('post-modal');
+  const postModalBody = document.getElementById('post-modal-body');
+  postModalBody.addEventListener('click', postAreaClick);
+  postModalBody.addEventListener('keydown', postAreaKeydown);
+  postModalEl.addEventListener('click', e => {
+    if (e.target === postModalEl || e.target.closest('.pm-close')) closePostModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !postModalEl.hidden && lightbox.hidden) closePostModal();
   });
 
   document.addEventListener('click', e => {
     if (!e.target.closest('.post-menu')) {
-      feedEl.querySelectorAll('.menu').forEach(m => m.hidden = true);
+      document.querySelectorAll('.post-item .menu').forEach(m => m.hidden = true);
     }
   });
+
+  /* atualiza setas e pontinhos do carrossel conforme o scroll */
+  document.addEventListener('scroll', e => {
+    const track = e.target;
+    if (!(track instanceof Element) || !track.matches('.car-track')) return;
+    const i = Math.round(track.scrollLeft / track.clientWidth);
+    const wrap = track.closest('.post-car');
+    wrap.querySelectorAll('.car-dots span').forEach((d, j) => d.classList.toggle('on', j === i));
+    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+    wrap.querySelector('.car-btn.prev').classList.toggle('off', track.scrollLeft < 4);
+    wrap.querySelector('.car-btn.next').classList.toggle('off', atEnd);
+  }, true);
 
   /* ---------- galeria da capa ---------- */
   document.querySelectorAll('#gallery .g-thumb').forEach(b => {
