@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comunidade | Kofy Community</title>
-<meta name="description" content="Kofy Community — a comunidade de quem constrói com IA: marketing, vendas e contratos, juntos e em tempo real.">
+<title>Comunidade | atnx</title>
+<meta name="description" content="atnx — a comunidade de quem constrói com IA: marketing, vendas e contratos, juntos e em tempo real.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kofy Community — comunidade">
+<meta property="og:title" content="atnx — comunidade">
 <meta property="og:description" content="Construa em público com IA. Encontros ao vivo, postagens diárias e network com quem está construindo de verdade. Grátis por 20 dias, depois R$ 19/mês.">
-<meta property="og:site_name" content="Kofy Community">
+<meta property="og:site_name" content="atnx">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#111111">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Cpath fill='%23FFFFFF' d='M32 12c11.6 0 21 7.6 21 17s-9.4 17-21 17c-2.1 0-4.2-.25-6.1-.7L16 50l2.4-8.2C14.1 38.7 11 34.1 11 29c0-9.4 9.4-17 21-17z'/%3E%3Cpath fill='none' stroke='%23111111' stroke-width='4' stroke-linecap='round' d='M32 18c-4.5 4.5 4.5 7.5 0 12s4.5 7.5 0 12'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111111'/%3E%3Cpath fill='%23F2EDDE' transform='translate(11,11) scale(0.78)' d='M50 9C57.2 9 63 14.8 63 22C60.5 33 67 50 84.5 65.5A13.5 13.5 0 1 1 65.5 65.5C60 59.5 55 58 50 58C45 58 40 59.5 34.5 65.5A13.5 13.5 0 1 1 15.5 65.5C33 50 39.5 33 37 22C37 14.8 42.8 9 50 9Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -892,7 +892,80 @@
 
   /* ---------- MEMBROS ---------- */
 
-  .member { padding: 16px 20px; display: flex; align-items: center; gap: 13px; }
+  .member { padding: 16px 20px; display: flex; align-items: center; gap: 13px; cursor: pointer; }
+  .member:hover .name { text-decoration: underline; }
+
+  /* leaderboard */
+  .lb-card { padding: 20px; }
+  .lb-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .lb-head h4 { font-size: 15px; }
+  .lb-note { font-size: 12px; color: var(--muted-2); }
+  .lb-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; cursor: pointer; }
+  .lb-row:hover { background: var(--btn-bg); }
+  .lb-row .avatar { width: 34px; height: 34px; font-size: 14px; flex-shrink: 0; }
+  .lb-pos { width: 26px; text-align: center; font-weight: 700; font-size: 14px; color: var(--muted); flex-shrink: 0; }
+  .lb-row.top .lb-pos { font-size: 18px; }
+  .lb-name { flex: 1; font-weight: 600; font-size: 14px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lb-pts { font-weight: 700; font-size: 13px; color: var(--ink); flex-shrink: 0; }
+  .lb-row.me { border: 1px solid var(--border); }
+
+  /* calendário */
+  .cal-sub { font-size: 14px; color: var(--muted); }
+  .cal-card { padding: 0; overflow: hidden; }
+  .cal-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 18px; }
+  .cal-today-btn { border: 1px solid var(--border); background: var(--card); color: var(--ink); font: 600 13px "Inter", sans-serif; padding: 8px 18px; border-radius: 999px; cursor: pointer; }
+  .cal-today-btn:hover { background: var(--btn-bg); }
+  .cal-mid { display: flex; align-items: center; gap: 14px; }
+  .cal-title { font-weight: 700; font-size: 15.5px; min-width: 120px; text-align: center; }
+  .cal-nav { width: 28px; height: 28px; border: none; background: none; border-radius: 8px; cursor: pointer; font-size: 17px; color: var(--muted); line-height: 1; }
+  .cal-nav:hover { background: var(--btn-bg); color: var(--ink); }
+  .cal-tz { font-size: 12.5px; color: var(--muted); }
+  .cal-week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; font-size: 12.5px; font-weight: 500; color: var(--muted); padding: 8px 0; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .cal-cell { min-width: 0; min-height: 92px; border-right: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); padding: 6px; font-size: 13px; text-align: left; vertical-align: top; }
+  .cal-cell:nth-child(7n) { border-right: none; }
+  .cal-cell .n { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; font-weight: 500; color: var(--ink); }
+  .cal-cell.out .n { color: var(--muted-2); }
+  .cal-cell.today .n { background: #E5483F; color: #FFFFFF; font-weight: 700; }
+  .cal-ev { display: block; width: 100%; margin-top: 4px; background: #111111; color: #FFFFFF; border: none; border-radius: 6px; padding: 3px 7px; font: 600 11px "Inter", sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; text-align: left; }
+  .cal-ev:hover { filter: brightness(1.35); }
+  body.dark .cal-ev { background: #ECECEC; color: #111111; }
+  body.dark .cal-ev:hover { filter: brightness(0.85); }
+
+  #event-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 95; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .event-card { background: var(--card); border-radius: 20px; padding: 26px 24px; width: 100%; max-width: 380px; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+  .event-card .ev-title { font-size: 17px; margin-bottom: 4px; }
+  .event-card .ev-meta { font-size: 13px; margin: 0 0 10px; }
+  .event-card .ev-desc { margin-bottom: 16px; }
+  .event-card .gcal-btn { display: block; width: 100%; text-align: center; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 11px 0; font: 700 13px "Inter", sans-serif; }
+  .event-card .gcal-btn:hover { text-decoration: none; filter: brightness(1.3); }
+  body.dark .event-card .gcal-btn { background: #ECECEC; color: #111111; }
+  .event-card .ev-remove { width: 100%; margin-top: 8px; background: none; border: none; color: var(--red); font: 600 12.5px "Inter", sans-serif; cursor: pointer; padding: 8px; border-radius: 10px; }
+  .event-card .ev-remove:hover { background: #FDEEED; }
+  body.dark .event-card .ev-remove:hover { background: #3A1F1D; }
+
+  @media (max-width: 640px) {
+    .cal-tz { display: none; }
+    .cal-cell { min-height: 64px; padding: 4px; }
+    .cal-ev { font-size: 10px; padding: 2px 5px; }
+  }
+
+  .cal-events { padding: 20px; }
+  .ev-row { display: flex; gap: 14px; padding: 12px; border: 1px solid var(--border-soft); border-radius: 14px; margin-bottom: 8px; align-items: flex-start; }
+  .ev-datebox { flex-shrink: 0; width: 48px; text-align: center; background: var(--btn-bg); border-radius: 10px; padding: 6px 0; }
+  .ev-datebox b { display: block; font-size: 17px; line-height: 1.2; }
+  .ev-datebox span { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .ev-info { flex: 1; min-width: 0; }
+  .ev-title { font-weight: 700; font-size: 14px; }
+  .ev-meta { font-size: 12px; color: var(--muted); margin: 2px 0 4px; }
+  .ev-desc { font-size: 13px; color: var(--muted); }
+  .ev-del { background: none; border: none; color: var(--muted-2); cursor: pointer; font-size: 12px; padding: 4px; border-radius: 8px; }
+  .ev-del:hover { color: var(--red); }
+  .ev-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+  .ev-form input, .ev-form textarea { border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; font: 400 13.5px "Inter", sans-serif; background: var(--card); color: var(--ink); outline: none; resize: vertical; }
+  .ev-form input:focus, .ev-form textarea:focus { border-color: var(--muted-2); }
+  .ev-form .row2 { display: flex; gap: 8px; }
+  .ev-form .row2 input { flex: 1; min-width: 0; }
 
   .member .info { flex: 1; }
   .member .name { font-weight: 600; font-size: 14.5px; }
@@ -1061,7 +1134,7 @@
   .menu button.danger { color: #E5483F; }
   .menu button.danger:hover { background: #FDEEED; }
 
-  .post-body-text { font-size: 15.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; margin-bottom: 12px; }
+  .post-body-text { font-size: 15.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; margin-bottom: 6px; }
 
   .post-body-text a {
     color: var(--ink);
@@ -1071,20 +1144,20 @@
     word-break: break-all;
   }
 
-  .post-actions { display: flex; gap: 8px; border-top: 1px solid var(--border-soft); padding-top: 10px; }
+  .post-actions { display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--border-soft); padding-top: 5px; }
 
   .act {
     background: none;
     border: none;
     border-radius: 999px;
-    padding: 6px 14px;
-    font: 500 13px "Inter", sans-serif;
-    color: var(--muted);
+    padding: 6px 10px;
+    font: 600 13px "Inter", sans-serif;
+    color: var(--ink);
     cursor: pointer;
     transition: background 0.15s, color 0.15s;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
   }
 
   .act svg {
@@ -1099,8 +1172,24 @@
   }
 
   .act:hover { background: var(--btn-bg); color: var(--ink); }
-  .act.liked { color: #E5483F; }
-  .act.liked svg { fill: #E5483F; stroke: #E5483F; }
+
+  /* barra de ações flat (setas, repost, salvar, balão) */
+  .act svg.i-fill { fill: currentColor; stroke: none; }
+  .post-meta { font-size: 13px; color: var(--ink); align-self: center; }
+
+  /* quote-post (repost com citação) */
+  .quote-box { border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; margin-bottom: 6px; cursor: pointer; transition: background 0.15s; }
+  .quote-box:hover { background: var(--btn-bg); }
+  .quote-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .quote-head .avatar { width: 22px; height: 22px; font-size: 10px; flex-shrink: 0; }
+  .quote-head .name { font-weight: 600; font-size: 13px; }
+  .quote-head .when { color: var(--muted-2); font-size: 12px; }
+  .quote-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .quote-text { font-size: 13.5px; color: var(--muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; word-break: break-word; }
+  .quote-preview { position: relative; margin-top: 10px; }
+  .quote-preview .quote-box { margin-bottom: 0; cursor: default; }
+  .quote-preview .rm-quote { position: absolute; top: -8px; right: -6px; width: 22px; height: 22px; border-radius: 50%; border: none; background: #111111; color: #FFFFFF; font-size: 11px; cursor: pointer; line-height: 1; }
+  body.dark .quote-preview .rm-quote { background: #ECECEC; color: #111111; }
 
   .cmts { border-top: 1px solid var(--border-soft); margin-top: 10px; padding-top: 12px; }
 
@@ -1115,7 +1204,8 @@
     font-size: 14px;
     line-height: 1.55;
   }
-  .cmt-bubble .name { font-weight: 600; margin-right: 4px; }
+  .cmt-bubble .name { font-weight: 600; margin-right: 4px; cursor: pointer; }
+  .cmt-bubble .name:hover { text-decoration: underline; }
   .cmt-bubble .cmt-when { color: var(--muted-2); font-size: 12px; }
   .cmt-bubble .cmt-text { margin-top: 4px; white-space: pre-wrap; word-break: break-word; }
   .cmt-bubble code { background: var(--btn-bg); border-radius: 5px; padding: 1px 5px; font-size: 12.5px; }
@@ -1299,7 +1389,7 @@
 
   /* ---------- ENQUETE NO POST ---------- */
 
-  .poll { margin-bottom: 12px; }
+  .poll { margin-bottom: 6px; }
 
   .poll-opt-btn {
     position: relative;
@@ -1339,7 +1429,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
   }
 
   .post-imgs.single { grid-template-columns: 1fr; }
@@ -1363,7 +1453,7 @@
 
   /* ---------- CARROSSEL DE IMAGENS ---------- */
 
-  .post-car { margin-bottom: 12px; }
+  .post-car { margin-bottom: 6px; }
   .car-frame { position: relative; }
   .car-track {
     display: flex;
@@ -1452,7 +1542,7 @@
     to   { opacity: 1; transform: none; }
   }
 
-  .post-files { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .post-files { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
 
   .file-chip {
     display: inline-flex;
@@ -1607,6 +1697,54 @@
 
   /* ---------- ESCOLHA DE PAGAMENTO ---------- */
 
+  /* ---------- OBRIGADO (pós-pagamento) ---------- */
+
+  #thanks-view { display: none; }
+
+  body.show-thanks #thanks-view {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px 90px;
+  }
+
+  body.show-thanks .wrap,
+  body.show-thanks .footer { display: none; }
+
+  .ticket {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 46px 40px 36px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    height: fit-content;
+  }
+
+  .ticket .tk-emoji { font-size: 54px; display: block; margin-bottom: 18px; line-height: 1; }
+  .ticket h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .ticket .tk-sub { font-size: 15px; color: var(--muted); line-height: 1.55; margin-bottom: 32px; }
+
+  .tk-perf { position: relative; border-top: 2px dashed var(--border); margin: 0 -40px 28px; }
+  .tk-perf::before, .tk-perf::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+  .tk-perf::before { left: -15px; }
+  .tk-perf::after { right: -15px; }
+
+  .tk-btn { display: block; width: 100%; text-align: center; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 14px 0; font: 700 13.5px "Inter", sans-serif; letter-spacing: 0.04em; }
+  .tk-btn:hover { text-decoration: none; filter: brightness(1.3); }
+  body.dark .tk-btn { background: #ECECEC; color: #111111; }
+
   #paymethod-view { display: none; }
 
   body.show-paymethod #paymethod-view {
@@ -1695,39 +1833,52 @@
   .notif.unread { background: #F1F1EF; }
   .empty-notif { padding: 20px; text-align: center; color: var(--muted-2); font-size: 13px; }
 
-  .search-box { display: flex; align-items: center; gap: 9px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 10px 18px; }
-  .search-box svg { width: 15px; height: 15px; stroke: var(--muted-2); fill: none; stroke-width: 2; stroke-linecap: round; }
-  .search-box input { flex: 1; border: none; outline: none; background: transparent; font: 400 13.5px "Inter", sans-serif; color: var(--ink); }
-  .search-box input::placeholder { color: var(--muted-2); }
-
-  .post-actions .sv { margin-left: auto; }
   .act.sv svg { width: 15px; height: 15px; }
-  .act.sv.saved { color: #111111; }
-  .act.sv.saved svg { fill: #111111; stroke: #111111; }
+  .act.sv.saved svg { fill: currentColor; }
 
   .post-head .name { cursor: pointer; }
   .post-head .name:hover { text-decoration: underline; }
   .post-head .avatar { cursor: pointer; }
 
-  #profile-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 90; display: flex; align-items: center; justify-content: center; padding: 20px; }
-  .profile-card { background: var(--card); border-radius: 20px; padding: 28px 26px; width: 100%; max-width: 340px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
-  .prof-avatar { width: 62px; height: 62px; font-size: 24px; margin: 0 auto 12px; }
-  .prof-name { font-weight: 700; font-size: 17px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .prof-since { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
-  .prof-stats { display: flex; justify-content: center; gap: 26px; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); padding: 12px 0; margin-bottom: 14px; font-size: 13px; color: var(--muted); }
-  .prof-stats b { color: var(--ink); font-size: 16px; display: block; }
-  .prof-h { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 8px; }
-  .prof-post { background: var(--btn-bg); border-radius: 10px; padding: 9px 12px; font-size: 13px; margin-bottom: 6px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #profile-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 90; display: flex; align-items: flex-start; justify-content: center; padding: 34px 20px; overflow-y: auto; }
+  .profile-card { background: var(--card); border-radius: 20px; padding: 0; width: 100%; max-width: 540px; text-align: left; box-shadow: 0 20px 60px rgba(0,0,0,0.25); overflow: hidden; }
+  .prof-head { padding: 22px 22px 14px; }
+  .prof-topline { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 10px; }
+  .prof-avatar { width: 76px; height: 76px; font-size: 30px; margin: 0; }
+  .follow-btn { border: none; border-radius: 999px; padding: 9px 20px; font: 700 13px "Inter", sans-serif; background: #111111; color: #FFFFFF; cursor: pointer; }
+  .follow-btn.following { background: var(--btn-bg); color: var(--ink); }
+  .follow-btn.mini { padding: 8px 16px; font-size: 12px; flex-shrink: 0; }
+  body.dark .follow-btn { background: #ECECEC; color: #111111; }
+  body.dark .follow-btn.following { background: var(--btn-bg); color: var(--ink); }
+  .prof-name { font-weight: 700; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+  .prof-handle { font-size: 13px; color: var(--muted-2); margin-bottom: 8px; }
+  .prof-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 10px; text-decoration: underline; text-underline-offset: 2px; }
+  .prof-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .prof-since { font-size: 12.5px; color: var(--muted-2); margin-bottom: 10px; }
+  .prof-counts { display: flex; gap: 18px; font-size: 13.5px; color: var(--muted); }
+  .prof-counts b { color: var(--ink); }
+  .prof-tabs { display: flex; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+  .prof-tab { flex: 1; background: none; border: none; padding: 12px 0; font: 600 13px "Inter", sans-serif; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; }
+  .prof-tab.active { color: var(--ink); border-bottom-color: #111111; }
+  body.dark .prof-tab.active { border-bottom-color: #ECECEC; }
+  .prof-body { padding: 14px 22px 18px; max-height: 320px; overflow-y: auto; }
+  .prof-post { background: var(--btn-bg); border-radius: 12px; padding: 10px 14px; font-size: 13px; margin-bottom: 8px; text-align: left; cursor: pointer; }
+  .prof-post:hover { filter: brightness(0.96); }
+  .prof-post .pp-title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .prof-post .pp-meta { font-size: 11.5px; color: var(--muted-2); margin-top: 2px; }
+  .prof-empty { text-align: center; color: var(--muted-2); font-size: 13px; padding: 18px 0; }
+  .prof-foot { padding: 0 22px 18px; }
 
-  .prof-bio { font-size: 13.5px; color: var(--muted); margin: -6px 0 14px; }
+  .prof-bio { font-size: 14px; color: var(--ink); margin: 0 0 10px; }
   .prof-edit-btn { width: 100%; margin-top: 12px; }
+  .prof-edit-wrap { padding: 24px 22px; }
   .prof-edit { display: flex; flex-direction: column; gap: 8px; text-align: left; }
   .prof-edit label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-2); }
   .prof-edit input, .prof-edit textarea { width: 100%; border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; font: 400 14px "Inter", sans-serif; background: var(--card); color: var(--ink); outline: none; resize: vertical; }
   .prof-edit input:focus, .prof-edit textarea:focus { border-color: var(--muted-2); }
   .prof-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 6px; }
 
-  .prof-logout { width: 100%; margin-top: 8px; background: none; border: none; color: #E5483F; font: 600 13px 'Inter', sans-serif; cursor: pointer; padding: 8px; border-radius: 10px; }
+  .prof-logout { width: 100%; margin-top: 0; background: none; border: none; color: #E5483F; font: 600 13px 'Inter', sans-serif; cursor: pointer; padding: 8px; border-radius: 10px; }
   .prof-logout:hover { background: #FDEEED; }
   body.dark .prof-logout:hover { background: #3A1F1D; }
 
@@ -1988,7 +2139,7 @@
     /* inputs com 16px+ não dão zoom automático no iPhone */
     .login-card input, .composer textarea,
     .cmt-form input, .reply-form input, .poll-builder input,
-    .search-box input, .prof-edit input, .prof-edit textarea,
+    .prof-edit input, .prof-edit textarea,
     .edit-box input, .edit-box textarea { font-size: 16px; }
     #new-title { font-size: 16px !important; }
 
@@ -2027,8 +2178,8 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#">
-      <svg class="brand-icon" width="27" height="27" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10c12.7 0 23 8.3 23 18.5S44.7 47 32 47c-2.3 0-4.6-.27-6.7-.78L14 52l2.7-9.3C12.2 39.4 9 34.7 9 28.5 9 18.3 19.3 10 32 10z"/><path d="M32 16.5c-5 5 5 8 0 13s5 8 0 13"/></g></svg>
-      <span class="brand-word">kofy</span><span class="brand-sub">community</span>
+      <svg class="brand-icon" width="27" height="27" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#111111"/><path fill="#F2EDDE" transform="translate(11,11) scale(0.78)" d="M50 9C57.2 9 63 14.8 63 22C60.5 33 67 50 84.5 65.5A13.5 13.5 0 1 1 65.5 65.5C60 59.5 55 58 50 58C45 58 40 59.5 34.5 65.5A13.5 13.5 0 1 1 15.5 65.5C33 50 39.5 33 37 22C37 14.8 42.8 9 50 9Z"/></svg>
+      <span class="brand-word">atnx</span><span class="brand-sub">community</span>
     </a>
     <div class="nav-right">
       <button class="nav-icon" id="dark-toggle" title="modo escuro">
@@ -2060,7 +2211,7 @@
 
   <!-- ===== MAIN ===== -->
   <main class="card main-card">
-    <h1 class="room-title">Kofy Community</h1>
+    <h1 class="room-title">atnx</h1>
 
     <div class="cover">
       <div class="slide slide-promo on" id="slide-1">
@@ -2072,7 +2223,7 @@
           </div>
           <span class="vs">VS</span>
           <div class="promo-col">
-            <span class="promo-sub">Depois · Kofy Community</span>
+            <span class="promo-sub">Depois · atnx</span>
             <span class="promo-title" style="font-size:22px">Construindo junto</span>
             <span>Sites → Agentes → Marketing → Contratos fechados.</span>
           </div>
@@ -2080,7 +2231,7 @@
       </div>
 
       <div class="slide slide-promo" id="slide-2">
-        <span class="promo-sub">Kofy Community</span>
+        <span class="promo-sub">atnx</span>
         <span class="promo-title">O que tem dentro</span>
         <div class="promo-grid">
           <div class="promo-cell">Encontros semanais ao vivo</div>
@@ -2162,7 +2313,7 @@
         <li><span class="ico">❌</span> Ver todo mundo falando de IA e não saber por onde começar</li>
       </ul>
 
-      <h3>A Kofy Community é pra você.</h3>
+      <h3>A atnx é pra você.</h3>
       <ul>
         <li><span class="ico">⚡</span> Grátis por 20 dias — depois R$ 19/mês ( por enquanto )</li>
         <li><span class="ico">✅</span> Sem fidelidade, cancele quando quiser</li>
@@ -2186,10 +2337,10 @@
       </div>
     </div>
     <div class="side-body">
-      <div class="side-title">Kofy Community</div>
-      <a class="side-link" href="#">kofy.community</a>
+      <div class="side-title">atnx</div>
+      <a class="side-link" href="#">atnx.community</a>
 
-      <p class="side-desc">A Kofy Community é uma comunidade de builders. Alguns conteúdos são gratuitos, outros pagos. Tem gente construindo negócio de verdade com IA por aqui. Você também pode!</p>
+      <p class="side-desc">A atnx é uma comunidade de builders. Alguns conteúdos são gratuitos, outros pagos. Tem gente construindo negócio de verdade com IA por aqui. Você também pode!</p>
 
       <div class="stats">
         <div><span class="n">0</span><span class="l">membros</span></div>
@@ -2198,7 +2349,7 @@
       </div>
 
       <a class="cta" href="#login">COMEÇAR GRÁTIS — 20 DIAS</a>
-      <div class="powered">powered by <a href="#">kofy.community</a></div>
+      <div class="powered">powered by <a href="#">atnx.community</a></div>
     </div>
   </aside>
 
@@ -2211,7 +2362,7 @@
 
   <div class="login-center">
     <div class="login-card">
-      <h1>Entrar na Kofy Community</h1>
+      <h1>Entrar na atnx</h1>
       <p class="sub">Digite seu email e enviaremos um código de acesso. Sem senha.</p>
 
       <form id="form" novalidate>
@@ -2243,6 +2394,11 @@
   </div>
 </div>
 
+<!-- ===== DETALHE DE EVENTO ===== -->
+<div id="event-modal" hidden>
+  <div class="event-card" id="event-card"></div>
+</div>
+
 <!-- ===== TOAST ===== -->
 <div id="toast">
   <svg viewBox="0 0 24 24">
@@ -2262,7 +2418,7 @@
 <div id="paywall-view">
   <div class="paywall-card">
     <h1 id="pay-title">Falta só um passo</h1>
-    <p class="paywall-sub">A <span class="hl">Kofy Community</span> é exclusiva para assinantes. Ative sua assinatura e entre agora na comunidade.</p>
+    <p class="paywall-sub">A <span class="hl">atnx</span> é exclusiva para assinantes. Ative sua assinatura e entre agora na comunidade.</p>
 
     <ul class="benefits">
       <li>Encontros semanais ao vivo</li>
@@ -2302,6 +2458,17 @@
   </div>
 </div>
 
+<!-- ===== OBRIGADO (pós-pagamento) ===== -->
+<div id="thanks-view">
+  <div class="ticket">
+    <span class="tk-emoji">🎉</span>
+    <h1>Thank you!</h1>
+    <p class="tk-sub">Pagamento confirmado — seu acesso à atnx foi liberado com sucesso.</p>
+    <div class="tk-perf"></div>
+    <a class="tk-btn" href="#room">ENTRAR NA COMUNIDADE →</a>
+  </div>
+</div>
+
 <!-- ===== ROOM / FEED ===== -->
 <div id="room-view">
   <div class="room-wrap">
@@ -2315,13 +2482,20 @@
         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Membros <span class="cnt" id="cnt-membros">1</span>
       </button>
+      <button class="tab" data-tab="agenda">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Calendário
+      </button>
       <button class="tab" data-tab="sobre">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         Sobre
       </button>
       <button class="tab locked" disabled>Classroom <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></button>
       <button class="tab locked" disabled>Mapa <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></button>
-      <button class="tab locked" disabled>Leaderboards <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></button>
+      <button class="tab" data-tab="rank">
+        <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        Leaderboards
+      </button>
     </div>
 
     <div class="room-grid">
@@ -2350,6 +2524,7 @@
               <button class="add-opt" id="add-opt" type="button">+ adicionar opção</button>
             </div>
             <div class="attach-preview" id="attach-preview"></div>
+            <div class="quote-preview" id="quote-preview" hidden></div>
             <div class="composer-foot" id="composer-foot">
               <div class="attach-actions">
                 <button class="attach-btn" id="btn-img" title="adicionar imagem"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
@@ -2366,15 +2541,7 @@
             <button class="chip active">Todos</button>
             <button class="chip">Discussão geral</button>
             <button class="chip">Dúvidas</button>
-            <button class="chip">Wins</button>
-            <button class="chip">Launch</button>
-            <button class="chip">Recursos</button>
             <button class="chip">Procuro sócio</button>
-          </div>
-
-          <div class="search-box">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input id="search" placeholder="Buscar posts...">
           </div>
 
           <div class="card saved-bar" id="saved-bar" hidden>
@@ -2386,27 +2553,12 @@
         </div>
 
         <div class="tab-section" id="tab-membros">
-      <div class="card member">
-        <span class="avatar">P</span>
-        <div class="info">
-          <div class="name">pedromartins</div>
-          <div class="bio">Fundador da Kofy Community — sites, tráfego e IA aplicada</div>
-        </div>
-        <span class="badge">ADMIN</span>
-      </div>
-      <div class="card member" id="me-member" hidden>
-        <span class="avatar" id="me-member-avatar">?</span>
-        <div class="info">
-          <div class="name" id="me-member-name">você</div>
-          <div class="bio">Novo por aqui — se apresenta na aba Comunidade!</div>
-        </div>
-        <span class="badge member-badge">MEMBRO</span>
-      </div>
+      <div id="member-list"></div>
     </div>
 
     <div class="tab-section" id="tab-sobre">
       <div class="card sobre-card">
-        <h4>O que é a Kofy Community</h4>
+        <h4>O que é a atnx</h4>
         <p>A comunidade de freelancers que usam IA e marketing digital pra fechar mais contratos. Aqui a gente constrói em público: posta o que está fazendo, troca feedback e aplica IA de verdade no dia a dia — produto, marketing, vendas e operação.</p>
         <hr>
         <h4>Regras da room</h4>
@@ -2420,12 +2572,60 @@
       </div>
     </div>
 
+    <div class="tab-section" id="tab-agenda">
+      <p class="cal-sub">Encontros e eventos da comunidade. Clique num evento pra ver os detalhes e adicionar ao seu calendário.</p>
+      <div class="card cal-card">
+        <div class="cal-top">
+          <button class="cal-today-btn" id="cal-today">Hoje</button>
+          <div class="cal-mid">
+            <button class="cal-nav" id="cal-prev" title="mês anterior">‹</button>
+            <div class="cal-title" id="cal-title"></div>
+            <button class="cal-nav" id="cal-next" title="próximo mês">›</button>
+          </div>
+          <span class="cal-tz">horário de Brasília</span>
+        </div>
+        <div class="cal-week">
+          <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+      <div class="card cal-events">
+        <div class="lb-head">
+          <h4 id="ev-head">Eventos do mês</h4>
+          <button class="chip" id="ev-add" hidden>+ novo evento</button>
+        </div>
+        <div class="ev-form" id="ev-form" hidden>
+          <input id="ev-title" maxlength="60" placeholder="Título do evento">
+          <div class="row2">
+            <input id="ev-date" type="date">
+            <input id="ev-time" type="time">
+          </div>
+          <textarea id="ev-desc" rows="2" maxlength="200" placeholder="Descrição (opcional)"></textarea>
+          <div class="prof-actions">
+            <button class="chip" id="ev-cancel">cancelar</button>
+            <button class="post-btn" id="ev-save">salvar evento</button>
+          </div>
+        </div>
+        <div id="ev-list"></div>
+      </div>
+    </div>
+
+    <div class="tab-section" id="tab-rank">
+      <div class="card lb-card">
+        <div class="lb-head">
+          <h4>Leaderboard</h4>
+          <span class="lb-note">post +5 · upvote recebido +2 · comentário +1</span>
+        </div>
+        <div id="lb-list"></div>
+      </div>
+    </div>
+
       </div><!-- /room-main -->
 
       <aside class="card room-side">
         <div class="side-body">
-          <div class="side-title">Kofy Community</div>
-          <a class="side-link" href="#">kofy.community</a>
+          <div class="side-title">atnx</div>
+          <a class="side-link" href="#">atnx.community</a>
           <p class="side-desc">A comunidade de quem constrói em público. Encontros semanais, postagens diárias, enquetes e network com quem está construindo em tempo real.</p>
           <div class="stats">
             <div><span class="n">0</span><span class="l">membros</span></div>
@@ -2541,9 +2741,13 @@
 
   const SUB_KEY = 'coffee-club-sub';
 
-  /* fundadores: entram sem pagar e com selo ADMIN */
+  /* fundador: entra sem pagar e com selo ADMIN */
   const FOUNDERS = ['phmartins357@outlook.com'];
-  const isFounder = em => !!em && (FOUNDERS.includes(em.toLowerCase()) || em.toLowerCase().indexOf('pedromartins@') === 0);
+  const isFounder = em => !!em && FOUNDERS.includes(em.toLowerCase());
+
+  /* dono da comunidade: único que pode fixar posts */
+  const OWNER = 'phmartins357@outlook.com';
+  const isOwner = em => !!em && em.toLowerCase() === OWNER;
 
   document.getElementById('subscribe').addEventListener('click', () => {
     location.hash = '#pagamento';
@@ -2551,26 +2755,37 @@
 
   document.getElementById('pay-pix').addEventListener('click', () => {
     localStorage.setItem(SUB_KEY, '1');
-    location.hash = '#room';
+    location.hash = '#obrigado';
   });
 
   document.getElementById('pay-cartao').addEventListener('click', () => {
     localStorage.setItem(SUB_KEY, '1');
-    location.hash = '#room';
+    location.hash = '#obrigado';
   });
 
   function route() {
+    if (location.hash.indexOf('#u/') === 0) {
+      openProfile(decodeURIComponent(location.hash.slice(3)));
+      return;
+    }
     const wantRoom = location.hash === '#room';
     const wantPay = location.hash === '#assinar';
     const wantMethod = location.hash === '#pagamento';
+    const wantThanks = location.hash === '#obrigado';
     const logged = !!localStorage.getItem('cmd-club-user');
     const subbed = !!localStorage.getItem(SUB_KEY);
-    if ((wantRoom || wantPay || wantMethod) && !logged) { location.hash = '#login'; return; }
+    if ((wantRoom || wantPay || wantMethod || wantThanks) && !logged) { location.hash = '#login'; return; }
+    if (wantThanks && !subbed) { location.hash = '#assinar'; return; }
     if (wantRoom && !subbed && !isFounder(localStorage.getItem('cmd-club-user'))) { location.hash = '#assinar'; return; }
     const showLogin = location.hash === '#login';
     document.body.classList.toggle('show-login', showLogin);
     document.body.classList.toggle('show-paywall', wantPay && logged);
     document.body.classList.toggle('show-paymethod', wantMethod && logged);
+    document.body.classList.toggle('show-thanks', wantThanks && logged && subbed);
+    if (wantThanks && logged && subbed) {
+      window.scrollTo(0, 0);
+      setTimeout(() => burst(innerWidth / 2, innerHeight * 0.3, 90), 300);
+    }
     const canRoom = subbed || isFounder(localStorage.getItem('cmd-club-user'));
     document.body.classList.toggle('show-room', wantRoom && logged && canRoom);
     if (wantPay && logged) {
@@ -2595,15 +2810,7 @@
       window.scrollTo(0, 0);
       renderFeed();
       updateOnboard();
-      const u = localStorage.getItem('cmd-club-user');
-      const mm = document.getElementById('me-member');
-      if (u && !isFounder(u)) {
-        mm.hidden = false;
-        setAv(document.getElementById('me-member-avatar'), u);
-        document.getElementById('me-member-name').textContent = nameOf(u);
-        document.querySelector('#me-member .bio').textContent = bioOf(u);
-        document.getElementById('cnt-membros').textContent = '2';
-      }
+      renderMembers();
     }
   }
 
@@ -2651,7 +2858,7 @@
 
   function avSpan(em, cls) {
     const ph = photoOf(em);
-    return '<span class="avatar' + (cls ? ' ' + cls : '') + '">' +
+    return '<span class="avatar' + (cls ? ' ' + cls : '') + '" data-em="' + esc(em) + '">' +
       (ph ? '<img src="' + ph + '">' : esc(nameOf(em)[0])) + '</span>';
   }
 
@@ -2695,22 +2902,37 @@
     return 'há ' + Math.floor(s / 86400) + ' d';
   }
 
+  const SEED_V = 3;
+  const SEED_AUTHOR = 'phmartins357@outlook.com';
+  const SEED_TITLE = '👋 Bem-vindo à atnx — começa por aqui';
+  const SEED_TEXT = 'Essa é a atnx: a comunidade de quem constrói com IA em público.\n\nComo aproveitar ao máximo:\n\n1. Se apresenta aqui nos comentários — quem é você e o que está construindo\n2. Completa teu perfil (foto, bio e o link do teu site ou SaaS)\n3. Posta teu progresso no feed — dúvida real vale mais que teoria\n4. Confere o Calendário: os encontros ao vivo ficam marcados lá\n5. Dá upvote no que te ajudou — quem mais contribui sobe no Leaderboard\n\nSem spam, sem pirâmide, sem "link na bio". Feedback direto, sempre com respeito.\n\nBora construir? 🚀';
+
   if (loadPosts().length === 0) {
     savePosts([{
       id: 1,
-      author: 'pedromartins@kofy.community',
-      title: '👋 Boas-vindas ao primeiro post da room',
+      v: SEED_V,
+      author: SEED_AUTHOR,
+      title: SEED_TITLE,
       cat: 'Discussão geral',
-      pinned: false,
-      text: 'Essa é a Kofy Community: a comunidade de quem constrói com IA em público. Poste o que você está construindo, peça ajuda quando travar e compartilhe o que funcionou. Bora?',
+      pinned: true,
+      text: SEED_TEXT,
       ts: Date.now(),
       likes: [],
+      dislikes: [],
       comments: []
     }]);
   } else {
+    /* atualiza o post fixado de quem já tinha a versão antiga */
     const ps = loadPosts();
     const seed = ps.find(x => x.id === 1);
-    if (seed && seed.pinned) { seed.pinned = false; savePosts(ps); }
+    if (seed && seed.v !== SEED_V) {
+      seed.v = SEED_V;
+      seed.author = SEED_AUTHOR;
+      seed.title = SEED_TITLE;
+      seed.text = SEED_TEXT;
+      seed.pinned = true;
+      savePosts(ps);
+    }
   }
 
   const feedEl = document.getElementById('feed');
@@ -2718,7 +2940,7 @@
   const publish = document.getElementById('publish');
   const meAvatar = document.getElementById('me-avatar');
 
-  const UPVOTE = '<svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+  const UPVOTE = '<svg viewBox="0 0 24 24" class="i-fill"><path d="M12 3 4.5 11.5h5v8.5h5v-8.5h5z"/></svg>';
   const ICON_LINK = '<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
   const ICON_COPY = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
   const ICON_TRASH = '<svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
@@ -2727,6 +2949,9 @@
   const ICON_SHARE = '<svg viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
   const THUMB = '<svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>';
   const ARROW_SEND = '<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  const ICON_BALLOON = '<svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>';
+  const ICON_REPOST = '<svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>';
+  const ICON_PIN = '<svg viewBox="0 0 24 24"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg>';
 
   function renderImgs(p) {
     if (!p.images || !p.images.length) return '';
@@ -2774,17 +2999,24 @@
     }).join('') + '<div class="poll-total">' + total + (total === 1 ? ' voto' : ' votos') + ' · ' + pollTimeLeft(p) + '</div></div>';
   }
 
+  function renderQuote(p) {
+    if (!p.quote) return '';
+    const q = p.quote;
+    return '<div class="quote-box" data-quote-open="' + q.id + '">' +
+      '<div class="quote-head">' + avSpan(q.author) +
+      '<span class="name" data-em="' + esc(q.author) + '">' + esc(nameOf(q.author)) + '</span>' +
+      (q.ts ? '<span class="when">· ' + timeAgo(q.ts) + '</span>' : '') + '</div>' +
+      (q.title ? '<div class="quote-title">' + esc(q.title) + '</div>' : '') +
+      (q.text ? '<div class="quote-text">' + esc(q.text) + '</div>' : '') +
+      '</div>';
+  }
+
   function renderFeed() {
     const user = me();
     if (user) setAv(meAvatar, user); else meAvatar.textContent = '?';
     let posts = loadPosts().slice().sort((a, b) => (b.pinned - a.pinned) || (b.ts - a.ts));
     if (curCat !== 'Todos') posts = posts.filter(p => (p.cat || 'Discussão geral') === curCat);
     if (savedOnly) { const sv = loadSaved(); posts = posts.filter(p => sv.includes(p.id)); }
-    const term = (searchInput.value || '').trim().toLowerCase();
-    if (term) posts = posts.filter(p =>
-      (p.title || '').toLowerCase().includes(term) ||
-      (p.text || '').toLowerCase().includes(term) ||
-      nameOf(p.author).toLowerCase().includes(term));
     if (!posts.length) {
       feedEl.innerHTML = '<div class="empty-feed">Nenhuma postagem aqui ainda. Seja o primeiro!</div>';
       if (openPostId != null) renderPostModal();
@@ -2804,7 +3036,7 @@
           const rLikes = rp.likes || [];
           return '<div class="cmt reply">' + avSpan(rp.author) +
             '<div class="cmt-main"><div class="cmt-bubble">' +
-            '<span class="name">' + esc(nameOf(rp.author)) + '</span>' +
+            '<span class="name" data-em="' + esc(rp.author) + '">' + esc(nameOf(rp.author)) + '</span>' +
             (rp.ts ? '<span class="cmt-when">· ' + timeAgo(rp.ts) + '</span>' : '') +
             '<div class="cmt-text">' + cmtBody(rp.text) + '</div>' +
             (rp.author === user ? '<button class="cmt-del" data-del-reply="' + ci + ':' + ri + '" title="apagar">✕</button>' : '') +
@@ -2816,7 +3048,7 @@
         return '<div class="cmt-block">' +
           '<div class="cmt">' + avSpan(c.author) +
           '<div class="cmt-main"><div class="cmt-bubble">' +
-          '<span class="name">' + esc(nameOf(c.author)) + '</span>' +
+          '<span class="name" data-em="' + esc(c.author) + '">' + esc(nameOf(c.author)) + '</span>' +
           (c.ts ? '<span class="cmt-when">· ' + timeAgo(c.ts) + '</span>' : '') +
           '<div class="cmt-text">' + cmtBody(c.text) + '</div>' +
           (c.author === user ? '<button class="cmt-del" data-del-cmt="' + ci + '" title="apagar">✕</button>' : '') +
@@ -2832,24 +3064,25 @@
           '</div>';
       }).join('');
       const mine = p.author === user;
-      const lastCmt = p.comments.length
-        ? ' <span class="post-meta">· novo comentário ' + timeAgo(p.comments[p.comments.length - 1].ts) + '</span>'
-        : '';
       const isSaved = loadSaved().includes(p.id);
+      const nReposts = loadPosts().filter(x => x.quote && x.quote.id === p.id).length;
+      const lastCmt = p.comments.length
+        ? '<span class="post-meta">novo comentário ' + timeAgo(p.comments[p.comments.length - 1].ts) + '</span>'
+        : '';
       return '<div class="card post-item" data-id="' + p.id + '">' +
         (p.pinned ? '<span class="ribbon">fixado</span>' : '') +
         '<div class="post-head">' + avSpan(p.author) +
-        '<div><span class="name">' + esc(nameOf(p.author)) + '</span>' +
+        '<div><span class="name" data-em="' + esc(p.author) + '">' + esc(nameOf(p.author)) + '</span>' +
         '<span class="when">' + timeAgo(p.ts) + ' · ' + esc(p.cat || 'Discussão geral') + (p.edited ? ' · editado' : '') + '</span></div>' +
-        (p.pinned ? '' :
-          '<div class="post-menu"><button class="dots-btn" data-menu title="opções">⋯</button>' +
-          '<div class="menu" hidden>' +
-          '<button data-share>' + ICON_SHARE + ' Compartilhar</button>' +
-          '<button data-copylink>' + ICON_LINK + ' Copiar link</button>' +
-          '<button data-copy>' + ICON_COPY + ' Copiar texto</button>' +
-          (mine && (Date.now() - p.ts) < 4 * 3600 * 1000 ? '<button data-edit>' + ICON_EDIT + ' Editar</button>' : '') +
-          (mine ? '<button class="danger" data-del>' + ICON_TRASH + ' Excluir</button>' : '') +
-          '</div></div>') +
+        '<div class="post-menu"><button class="dots-btn" data-menu title="opções">⋯</button>' +
+        '<div class="menu" hidden>' +
+        (isOwner(user) ? '<button data-pin>' + ICON_PIN + (p.pinned ? ' Desafixar' : ' Fixar no topo') + '</button>' : '') +
+        '<button data-share>' + ICON_SHARE + ' Compartilhar</button>' +
+        '<button data-copylink>' + ICON_LINK + ' Copiar link</button>' +
+        '<button data-copy>' + ICON_COPY + ' Copiar texto</button>' +
+        (mine && (Date.now() - p.ts) < 4 * 3600 * 1000 ? '<button data-edit>' + ICON_EDIT + ' Editar</button>' : '') +
+        (mine || isFounder(user) ? '<button class="danger" data-del>' + ICON_TRASH + ' Excluir</button>' : '') +
+        '</div></div>' +
         '</div>' +
         (p.id === editingId
           ? '<div class="edit-box">' +
@@ -2858,13 +3091,13 @@
             '<div class="prof-actions"><button class="chip" data-edit-cancel>cancelar</button><button class="post-btn" data-edit-save>salvar</button></div></div>'
           : (p.title ? '<div class="post-h">' + esc(p.title) + '</div>' : '') +
             (p.text ? '<p class="post-body-text">' + linkify(esc(p.text)) + '</p>' : '')) +
-        renderImgs(p) + renderFilesOf(p) + renderPoll(p, user) +
+        renderImgs(p) + renderFilesOf(p) + renderPoll(p, user) + renderQuote(p) +
         '<div class="post-actions">' +
-        '<button class="act' + (liked ? ' liked' : '') + '" data-like>' + UPVOTE + ' ' + p.likes.length + '</button>' +
-        '<button class="act" data-toggle-cmt>' + p.comments.length + (p.comments.length === 1 ? ' comentário' : ' comentários') + '</button>' +
-        '<button class="act" data-share-post>' + ICON_SHARE + ' compartilhar</button>' +
+        '<button class="act' + (liked ? ' liked' : '') + '" data-like title="upvote">' + UPVOTE + ' ' + p.likes.length + '</button>' +
+        '<button class="act" data-quote title="repostar com citação">' + ICON_REPOST + ' ' + nReposts + '</button>' +
+        '<button class="act sv' + (isSaved ? ' saved' : '') + '" data-save title="salvar">' + BOOKMARK + '</button>' +
+        '<button class="act" data-toggle-cmt title="comentários">' + ICON_BALLOON + ' ' + p.comments.length + '</button>' +
         lastCmt +
-        '<button class="act sv' + (isSaved ? ' saved' : '') + '" data-save>' + BOOKMARK + '</button>' +
         '</div>' +
         (inModal
           ? '<div class="cmts">' +
@@ -2914,6 +3147,27 @@
   let pendingImgs = [];
   let pendingFiles = [];
   let pollOn = false;
+  let pendingQuote = null;
+  const quotePreview = document.getElementById('quote-preview');
+
+  function renderQuotePreview() {
+    if (!pendingQuote) {
+      quotePreview.hidden = true;
+      quotePreview.innerHTML = '';
+      return;
+    }
+    quotePreview.hidden = false;
+    quotePreview.innerHTML = renderQuote({ quote: pendingQuote }) +
+      '<button class="rm-quote" title="remover citação">✕</button>';
+  }
+
+  quotePreview.addEventListener('click', e => {
+    if (e.target.closest('.rm-quote')) {
+      pendingQuote = null;
+      renderQuotePreview();
+      updatePublish();
+    }
+  });
 
   function pollOptions() {
     return Array.from(pollBuilder.querySelectorAll('.poll-opt-input'))
@@ -2943,7 +3197,7 @@
     if (e.target.closest('#composer-card')) return;
     if (composerCard.classList.contains('collapsed')) return;
     const empty = !newPost.value.trim() && !newTitle.value.trim() &&
-      !pendingImgs.length && !pendingFiles.length && !pollOn;
+      !pendingImgs.length && !pendingFiles.length && !pollOn && !pendingQuote;
     if (empty) {
       composerCard.classList.add('collapsed');
       newTitle.hidden = true;
@@ -3040,8 +3294,10 @@
       images: pendingImgs,
       files: pendingFiles,
       poll: (pollOn && opts.length >= 2) ? { options: opts.map(t => ({ text: t, votes: [] })), ends: Date.now() + POLL_DURATION } : null,
+      quote: pendingQuote,
       ts: Date.now(),
       likes: [],
+      dislikes: [],
       comments: []
     });
     try { savePosts(posts); }
@@ -3054,6 +3310,8 @@
     newTitle.hidden = true;
     pendingImgs = [];
     pendingFiles = [];
+    pendingQuote = null;
+    renderQuotePreview();
     renderAttach();
     pollOn = false;
     pollBuilder.hidden = true;
@@ -3109,7 +3367,9 @@
   const PROF_KEY = 'coffee-club-profiles';
   function loadProfiles() { try { return JSON.parse(localStorage.getItem(PROF_KEY)) || {}; } catch (e) { return {}; } }
   function saveProfiles(p) { localStorage.setItem(PROF_KEY, JSON.stringify(p)); }
-  function bioOf(em) { return (loadProfiles()[em] || {}).bio || 'Membro da Kofy Community'; }
+  function bioOf(em) { return (loadProfiles()[em] || {}).bio || 'Membro da atnx'; }
+  function handleOf(em) { const p = loadProfiles()[em] || {}; return p.user || em.split('@')[0]; }
+  function siteOf(em) { return (loadProfiles()[em] || {}).site || ''; }
 
   if (me()) {
     document.getElementById('um-name').textContent = nameOf(me());
@@ -3119,10 +3379,6 @@
   }
 
   const BOOKMARK = '<svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
-
-  /* ---------- busca ---------- */
-  const searchInput = document.getElementById('search');
-  searchInput.addEventListener('input', renderFeed);
 
   /* ---------- notificações ---------- */
   const NOTIF_KEY = 'coffee-club-notifs';
@@ -3174,32 +3430,101 @@
 
   renderBell();
 
-  /* ---------- perfil do membro ---------- */
+  /* ---------- seguidores ---------- */
+  const FOLLOW_KEY = 'coffee-club-follows';
+  function loadFollows() { try { return JSON.parse(localStorage.getItem(FOLLOW_KEY)) || {}; } catch (e) { return {}; } }
+  function saveFollows(f) { localStorage.setItem(FOLLOW_KEY, JSON.stringify(f)); }
+  function followingOf(em) { return loadFollows()[em] || []; }
+  function followersOf(em) {
+    const f = loadFollows();
+    return Object.keys(f).filter(k => (f[k] || []).includes(em));
+  }
+  function isFollowing(a, b) { return followingOf(a).includes(b); }
+
+  function toggleFollow(target) {
+    const u = me();
+    if (!u || u === target) return;
+    const f = loadFollows();
+    f[u] = f[u] || [];
+    const i = f[u].indexOf(target);
+    if (i === -1) { f[u].push(target); pushNotif(target, nameOf(u) + ' começou a seguir você'); }
+    else f[u].splice(i, 1);
+    saveFollows(f);
+  }
+
+  /* ---------- perfil do membro (estilo Twitter) ---------- */
   const profileModal = document.getElementById('profile-modal');
   const profileCard = document.getElementById('profile-card');
+  let profTab = 'posts';
 
   function openProfile(author) {
-    const all = loadPosts();
-    const own = all.filter(p => p.author === author).sort((a, b) => a.ts - b.ts);
-    const nCmts = all.reduce((s, p) => s + p.comments.filter(c => c.author === author).length, 0);
-    const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
-    const since = own.length ? new Date(own[0].ts) : new Date();
-    const isAdmin = isFounder(author);
-    const recentes = own.slice(-3).reverse().map(p =>
-      '<div class="prof-post">' + esc(p.title || (p.text || '').slice(0, 60)) + '</div>').join('');
-    profileCard.innerHTML =
-      avSpan(author, 'prof-avatar') +
-      '<div class="prof-name">' + esc(nameOf(author)) +
-      (isAdmin ? ' <span class="badge">ADMIN</span>' : '') + '</div>' +
-      '<div class="prof-since">membro desde ' + meses[since.getMonth()] + ' ' + since.getFullYear() + '</div>' +
-      '<div class="prof-bio">' + esc(bioOf(author)) + '</div>' +
-      '<div class="prof-stats"><div><b>' + own.length + '</b> posts</div><div><b>' + nCmts + '</b> comentários</div></div>' +
-      (recentes ? '<div class="prof-h">Últimos posts</div>' + recentes : '') +
-      (author === me()
-        ? '<button class="post-btn prof-edit-btn" id="edit-profile">editar perfil</button>' +
-          '<button class="prof-logout" id="prof-logout">sair da conta</button>'
-        : '');
+    profTab = 'posts';
+    renderProfile(author);
     profileModal.hidden = false;
+    try { history.replaceState(null, '', '#u/' + encodeURIComponent(author)); } catch (e) {}
+  }
+
+  function closeProfile() {
+    profileModal.hidden = true;
+    if (location.hash.indexOf('#u/') === 0) {
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    }
+  }
+
+  function renderProfile(author) {
+    const all = loadPosts();
+    const own = all.filter(p => p.author === author).sort((a, b) => b.ts - a.ts);
+    const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+    const since = own.length ? new Date(own[own.length - 1].ts) : new Date();
+    const isAdmin = isFounder(author);
+    const self = author === me();
+    const seguindo = followingOf(author).length;
+    const seguidores = followersOf(author).length;
+    const following = isFollowing(me(), author);
+
+    const compact = list => list.length ? list.map(p =>
+      '<div class="prof-post" data-open-post="' + p.id + '">' +
+      '<div class="pp-title">' + esc(p.title || (p.text || '').slice(0, 70) || 'post') + '</div>' +
+      '<div class="pp-meta">' + timeAgo(p.ts) + ' · ' + p.likes.length + ' upvotes · ' +
+      p.comments.length + (p.comments.length === 1 ? ' comentário' : ' comentários') + '</div>' +
+      '</div>').join('')
+      : '<div class="prof-empty">Nada por aqui ainda</div>';
+
+    const body = profTab === 'salvos'
+      ? compact(all.filter(p => loadSaved().includes(p.id)).sort((a, b) => b.ts - a.ts))
+      : compact(own);
+
+    profileCard.dataset.author = author;
+    profileCard.innerHTML =
+      '<div class="prof-head">' +
+      '<div class="prof-topline">' + avSpan(author, 'prof-avatar') +
+      (self
+        ? '<button class="follow-btn following" id="edit-profile">editar perfil</button>'
+        : '<button class="follow-btn' + (following ? ' following' : '') + '" data-follow>' + (following ? 'seguindo' : 'seguir') + '</button>') +
+      '</div>' +
+      '<div class="prof-name">' + esc(nameOf(author)) + (isAdmin ? ' <span class="badge">ADMIN</span>' : '') + '</div>' +
+      '<div class="prof-handle">@' + esc(handleOf(author)) + '</div>' +
+      '<div class="prof-bio">' + esc(bioOf(author)) + '</div>' +
+      (function () {
+        const s = siteOf(author);
+        if (!s) return '';
+        const href = s.indexOf('http') === 0 ? s : 'https://' + s;
+        const label = s.replace(/^https?:\/\//, '').replace(/\/$/, '');
+        return '<a class="prof-link" href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + ICON_LINK + ' ' + esc(label) + '</a>';
+      })() +
+      '<div class="prof-since">membro desde ' + meses[since.getMonth()] + ' ' + since.getFullYear() + '</div>' +
+      '<div class="prof-counts">' +
+      '<span><b>' + seguindo + '</b> seguindo</span>' +
+      '<span><b>' + seguidores + '</b> ' + (seguidores === 1 ? 'seguidor' : 'seguidores') + '</span>' +
+      '<span><b>' + own.length + '</b> posts</span>' +
+      '</div></div>' +
+      '<div class="prof-tabs">' +
+      '<button class="prof-tab' + (profTab === 'posts' ? ' active' : '') + '" data-ptab="posts">Posts</button>' +
+      (self ? '<button class="prof-tab' + (profTab === 'salvos' ? ' active' : '') + '" data-ptab="salvos">Salvos</button>' : '') +
+      '</div>' +
+      '<div class="prof-body">' + body + '</div>' +
+      (self ? '<div class="prof-foot"><button class="prof-logout" id="prof-logout">sair da conta</button></div>' : '');
+
     const eb = document.getElementById('edit-profile');
     if (eb) eb.addEventListener('click', () => editProfile(author));
     const lo = document.getElementById('prof-logout');
@@ -3212,10 +3537,29 @@
     });
   }
 
+  profileCard.addEventListener('click', e => {
+    const author = profileCard.dataset.author;
+    if (!author) return;
+    const tb = e.target.closest('[data-ptab]');
+    if (tb) { profTab = tb.dataset.ptab; renderProfile(author); return; }
+    if (e.target.closest('[data-follow]')) {
+      if (!me()) { closeProfile(); location.hash = '#login'; return; }
+      toggleFollow(author);
+      renderProfile(author);
+      return;
+    }
+    const op = e.target.closest('[data-open-post]');
+    if (op) {
+      closeProfile();
+      openPostModal(+op.dataset.openPost, false);
+    }
+  });
+
   function editProfile(author) {
     const prof = loadProfiles()[author] || {};
     let tempPhoto = prof.photo || null;
     profileCard.innerHTML =
+      '<div class="prof-edit-wrap">' +
       '<div class="prof-name" style="margin-bottom:14px">Editar perfil</div>' +
       '<div class="prof-edit">' +
       '<label>foto</label>' +
@@ -3227,12 +3571,16 @@
       '</div>' +
       '<label>nome de exibição</label>' +
       '<input id="pf-name" maxlength="30" value="' + esc(prof.name || nameOf(author)) + '">' +
+      '<label>username</label>' +
+      '<input id="pf-user" maxlength="20" value="' + esc(prof.user || author.split('@')[0]) + '" placeholder="seu-username">' +
+      '<label>site / saas</label>' +
+      '<input id="pf-site" maxlength="80" value="' + esc(prof.site || '') + '" placeholder="https://seusite.com">' +
       '<label>bio</label>' +
       '<textarea id="pf-bio" rows="3" maxlength="140" placeholder="Conte quem você é e o que está construindo...">' + esc(prof.bio || '') + '</textarea>' +
       '<div class="prof-actions">' +
       '<button class="chip" id="pf-cancel">cancelar</button>' +
       '<button class="post-btn" id="pf-save">salvar</button>' +
-      '</div></div>';
+      '</div></div></div>';
 
     const prev = document.getElementById('pf-av-prev');
     function drawPrev() {
@@ -3258,6 +3606,8 @@
       const all = loadProfiles();
       all[author] = {
         name: document.getElementById('pf-name').value.trim() || author.split('@')[0],
+        user: document.getElementById('pf-user').value.trim().replace(/^@+/, '').replace(/[^a-zA-Z0-9._-]/g, '').toLowerCase(),
+        site: document.getElementById('pf-site').value.trim(),
         bio: document.getElementById('pf-bio').value.trim(),
         photo: tempPhoto
       };
@@ -3274,7 +3624,43 @@
   }
 
   profileModal.addEventListener('click', e => {
-    if (e.target === profileModal) profileModal.hidden = true;
+    if (e.target === profileModal) closeProfile();
+  });
+
+  /* ---------- membros (dinâmico: perfis reais) ---------- */
+  function renderMembers() {
+    const set = {};
+    loadPosts().forEach(p => {
+      set[p.author] = 1;
+      (p.comments || []).forEach(c => {
+        set[c.author] = 1;
+        (c.replies || []).forEach(r => { set[r.author] = 1; });
+      });
+    });
+    FOUNDERS.forEach(f => { set[f] = 1; });
+    if (me()) set[me()] = 1;
+    const ems = Object.keys(set).sort((a, b) => nameOf(a).localeCompare(nameOf(b)));
+    document.getElementById('cnt-membros').textContent = ems.length;
+    document.getElementById('member-list').innerHTML = ems.map(em => {
+      const self = em === me();
+      const seg = isFollowing(me(), em);
+      return '<div class="card member" data-mem="' + esc(em) + '">' + avSpan(em) +
+        '<div class="info"><div class="name">' + esc(nameOf(em)) + '</div>' +
+        '<div class="bio">' + esc(bioOf(em)) + '</div></div>' +
+        (self ? '' : '<button class="follow-btn mini' + (seg ? ' following' : '') + '" data-follow-mem="' + esc(em) + '">' + (seg ? 'seguindo' : 'seguir') + '</button>') +
+        '</div>';
+    }).join('');
+  }
+
+  document.getElementById('member-list').addEventListener('click', e => {
+    const fb = e.target.closest('[data-follow-mem]');
+    if (fb) {
+      toggleFollow(fb.dataset.followMem);
+      renderMembers();
+      return;
+    }
+    const card = e.target.closest('.member');
+    if (card) openProfile(card.dataset.mem);
   });
 
   /* ---------- modo escuro ---------- */
@@ -3389,13 +3775,36 @@
     const p = posts.find(x => x.id === id);
     if (!p) return;
 
-    if (e.target.closest('.post-head .name') || e.target.closest('.post-head .avatar')) {
-      openProfile(p.author);
+    const who = e.target.closest('[data-em]');
+    if (who) {
+      openProfile(who.dataset.em);
+      return;
+    }
+
+    if (e.target.closest('[data-quote]')) {
+      pendingQuote = { id: p.id, author: p.author, title: p.title || '', text: (p.text || '').slice(0, 280), ts: p.ts };
+      if (inModal) closePostModal();
+      expandComposer();
+      renderQuotePreview();
+      updatePublish();
+      composerCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      newPost.focus();
+      showToast('Escreva seu insight pra repostar');
+      return;
+    }
+
+    const qo = e.target.closest('[data-quote-open]');
+    if (qo) {
+      const orig = posts.find(x => x.id === +qo.dataset.quoteOpen);
+      if (orig) {
+        if (inModal && orig.id !== id) { closePostModal(); openPostModal(orig.id, false); }
+        else if (!inModal) openPostModal(orig.id, false);
+      } else showToast('O post original foi apagado');
       return;
     }
 
     if (e.target.closest('[data-share-post]')) {
-      const payload = (p.title ? p.title + String.fromCharCode(10) : '') + (p.text || '') + String.fromCharCode(10) + '— ' + nameOf(p.author) + ' na Kofy Community';
+      const payload = (p.title ? p.title + String.fromCharCode(10) : '') + (p.text || '') + String.fromCharCode(10) + '— ' + nameOf(p.author) + ' na atnx';
       if (navigator.share) {
         navigator.share({ text: payload }).catch(() => {});
       } else {
@@ -3522,6 +3931,15 @@
       return;
     }
 
+    if (e.target.closest('[data-pin]')) {
+      if (!isOwner(me())) return;
+      p.pinned = !p.pinned;
+      savePosts(posts);
+      renderFeed();
+      showToast(p.pinned ? 'Post fixado no topo!' : 'Post desafixado');
+      return;
+    }
+
     if (e.target.closest('[data-menu]')) {
       const menu = item.querySelector('.menu');
       const wasHidden = menu.hidden;
@@ -3534,7 +3952,7 @@
       const btn = e.target.closest('button');
       let payload;
       if (e.target.closest('[data-copylink]')) payload = location.href.split('#')[0] + '#room';
-      else if (e.target.closest('[data-share]')) payload = '"' + p.text + '" — ' + nameOf(p.author) + ' na room da Kofy Community';
+      else if (e.target.closest('[data-share]')) payload = '"' + p.text + '" — ' + nameOf(p.author) + ' na room da atnx';
       else payload = p.text;
       navigator.clipboard.writeText(payload).then(() => {
         const orig = btn.innerHTML;
@@ -3569,7 +3987,7 @@
     if (e.target.closest('[data-like]')) {
       const user = me();
       const i = p.likes.indexOf(user);
-      if (i === -1) { p.likes.push(user); pushNotif(p.author, nameOf(user) + ' curtiu seu post'); }
+      if (i === -1) { p.likes.push(user); pushNotif(p.author, nameOf(user) + ' deu upvote no seu post'); }
       else p.likes.splice(i, 1);
       savePosts(posts);
       renderFeed();
@@ -3614,7 +4032,11 @@
     if (e.target === postModalEl || e.target.closest('.pm-close')) closePostModal();
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !postModalEl.hidden && lightbox.hidden) closePostModal();
+    if (e.key !== 'Escape' || !lightbox.hidden) return;
+    const evm = document.getElementById('event-modal');
+    if (!evm.hidden) { evm.hidden = true; return; }
+    if (!profileModal.hidden) { closeProfile(); return; }
+    if (!postModalEl.hidden) closePostModal();
   });
 
   document.addEventListener('click', e => {
@@ -3662,7 +4084,239 @@
       document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x === t));
       document.querySelectorAll('.tab-section').forEach(s =>
         s.classList.toggle('active', s.id === 'tab-' + t.dataset.tab));
+      if (t.dataset.tab === 'membros') renderMembers();
+      if (t.dataset.tab === 'rank') renderLeaderboard();
+      if (t.dataset.tab === 'agenda') { renderCal(); renderEvList(); }
     });
+  });
+
+  /* ---------- leaderboards ---------- */
+  function lbScores() {
+    const pts = {};
+    const add = (em, n) => { if (!em) return; pts[em] = (pts[em] || 0) + n; };
+    loadPosts().forEach(p => {
+      add(p.author, 5 + p.likes.length * 2);
+      (p.comments || []).forEach(c => {
+        add(c.author, 1);
+        (c.replies || []).forEach(r => add(r.author, 1));
+      });
+    });
+    return Object.keys(pts).map(em => ({ em, pts: pts[em] })).sort((a, b) => b.pts - a.pts);
+  }
+
+  function renderLeaderboard() {
+    const list = document.getElementById('lb-list');
+    const rank = lbScores();
+    const medals = ['🥇', '🥈', '🥉'];
+    list.innerHTML = rank.length ? rank.slice(0, 20).map((r, i) =>
+      '<div class="lb-row' + (i < 3 ? ' top' : '') + (r.em === me() ? ' me' : '') + '" data-em="' + esc(r.em) + '">' +
+      '<span class="lb-pos">' + (medals[i] || (i + 1)) + '</span>' +
+      avSpan(r.em) +
+      '<span class="lb-name">' + esc(nameOf(r.em)) + (isFounder(r.em) ? ' <span class="badge">ADMIN</span>' : '') + '</span>' +
+      '<span class="lb-pts">' + r.pts + ' pts</span>' +
+      '</div>').join('')
+      : '<div class="prof-empty">Ninguém pontuou ainda — poste algo!</div>';
+  }
+
+  document.getElementById('lb-list').addEventListener('click', e => {
+    const row = e.target.closest('.lb-row');
+    if (row) openProfile(row.dataset.em);
+  });
+
+  /* ---------- calendário ---------- */
+  const EVENTS_KEY = 'coffee-club-events';
+  function loadEvents() { try { return JSON.parse(localStorage.getItem(EVENTS_KEY)) || []; } catch (e) { return []; } }
+  function saveEvents(v) { localStorage.setItem(EVENTS_KEY, JSON.stringify(v)); }
+
+  function isoDate(d) {
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+
+  /* seed: primeiro encontro ao vivo na próxima quarta, 20h */
+  if (loadEvents().length === 0) {
+    const d = new Date();
+    d.setDate(d.getDate() + (((3 - d.getDay()) + 7) % 7 || 7));
+    saveEvents([{
+      id: 1,
+      title: 'Encontro ao vivo da atnx',
+      date: isoDate(d),
+      time: '20:00',
+      desc: 'Call semanal da comunidade — traz o que você está construindo.'
+    }]);
+  }
+
+  const MESES_FULL = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+  const DIAS_CURTO = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+  const DIAS_FULL = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+  let calDate = new Date();
+
+  function calMonthPrefix() {
+    return calDate.getFullYear() + '-' + String(calDate.getMonth() + 1).padStart(2, '0');
+  }
+
+  function horaLabel(t) {
+    if (!t) return '';
+    const parts = t.split(':');
+    return +parts[0] + 'h' + (parts[1] && parts[1] !== '00' ? parts[1] : '');
+  }
+
+  function renderCal() {
+    const mesNome = MESES_FULL[calDate.getMonth()];
+    document.getElementById('cal-title').textContent =
+      mesNome.charAt(0).toUpperCase() + mesNome.slice(1) + ' de ' + calDate.getFullYear();
+    const y = calDate.getFullYear();
+    const m = calDate.getMonth();
+    const offset = (new Date(y, m, 1).getDay() + 6) % 7; /* semana começa na segunda */
+    const nDays = new Date(y, m + 1, 0).getDate();
+    const hoje = isoDate(new Date());
+    const evMap = {};
+    loadEvents().forEach(ev => { (evMap[ev.date] = evMap[ev.date] || []).push(ev); });
+    const totalCells = Math.ceil((offset + nDays) / 7) * 7;
+    let html = '';
+    for (let i = 0; i < totalCells; i++) {
+      const dt = new Date(y, m, i - offset + 1);
+      const iso = isoDate(dt);
+      const out = dt.getMonth() !== m;
+      const evs = (evMap[iso] || []).slice().sort((a, b) => (a.time || '').localeCompare(b.time || ''));
+      html += '<div class="cal-cell' + (out ? ' out' : '') + (iso === hoje ? ' today' : '') + '">' +
+        '<span class="n">' + dt.getDate() + '</span>' +
+        evs.map(ev => '<button class="cal-ev" data-ev-open="' + ev.id + '">' +
+          (ev.time ? horaLabel(ev.time) + ' · ' : '') + esc(ev.title) + '</button>').join('') +
+        '</div>';
+    }
+    document.getElementById('cal-grid').innerHTML = html;
+  }
+
+  function renderEvList() {
+    const founder = isFounder(me());
+    document.getElementById('ev-add').hidden = !founder;
+    const evs = loadEvents().filter(ev => ev.date.indexOf(calMonthPrefix()) === 0);
+    evs.sort((a, b) => (a.date + (a.time || '')).localeCompare(b.date + (b.time || '')));
+    document.getElementById('ev-list').innerHTML = evs.length ? evs.map(ev => {
+      const parts = ev.date.split('-');
+      const dt = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+      return '<div class="ev-row">' +
+        '<div class="ev-datebox"><b>' + dt.getDate() + '</b><span>' + DIAS_CURTO[dt.getDay()] + '</span></div>' +
+        '<div class="ev-info">' +
+        '<div class="ev-title">' + esc(ev.title) + '</div>' +
+        '<div class="ev-meta">' + (ev.time ? ev.time + 'h · ' : '') + dt.getDate() + ' de ' + MESES_FULL[dt.getMonth()] + '</div>' +
+        (ev.desc ? '<div class="ev-desc">' + esc(ev.desc) + '</div>' : '') +
+        '</div>' +
+        (founder ? '<button class="ev-del" data-ev-del="' + ev.id + '" title="excluir evento">✕</button>' : '') +
+        '</div>';
+    }).join('') : '<div class="prof-empty">Nenhum evento nesse mês</div>';
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', () => {
+    calDate = new Date(calDate.getFullYear(), calDate.getMonth() - 1, 1);
+    renderCal();
+    renderEvList();
+  });
+
+  document.getElementById('cal-next').addEventListener('click', () => {
+    calDate = new Date(calDate.getFullYear(), calDate.getMonth() + 1, 1);
+    renderCal();
+    renderEvList();
+  });
+
+  document.getElementById('cal-today').addEventListener('click', () => {
+    calDate = new Date();
+    renderCal();
+    renderEvList();
+  });
+
+  /* detalhe do evento + adicionar ao Google Agenda */
+  const eventModal = document.getElementById('event-modal');
+  const eventCard = document.getElementById('event-card');
+
+  function gcalLink(ev) {
+    const d = ev.date.replace(/-/g, '');
+    let dates;
+    if (ev.time) {
+      const hm = ev.time.replace(':', '');
+      const fim = String(+ev.time.split(':')[0] + 1).padStart(2, '0') + ev.time.split(':')[1];
+      dates = d + 'T' + hm + '00/' + d + 'T' + fim + '00';
+    } else {
+      dates = d + '/' + d;
+    }
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+      '&text=' + encodeURIComponent(ev.title) +
+      '&dates=' + dates +
+      '&details=' + encodeURIComponent((ev.desc || '') + '\n\nEvento da comunidade atnx') +
+      '&ctz=America/Sao_Paulo';
+  }
+
+  function openEvent(id) {
+    const ev = loadEvents().find(x => x.id === id);
+    if (!ev) return;
+    const parts = ev.date.split('-');
+    const dt = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    eventCard.innerHTML =
+      '<div class="ev-title">' + esc(ev.title) + '</div>' +
+      '<div class="ev-meta">' + DIAS_FULL[dt.getDay()] + ', ' + dt.getDate() + ' de ' + MESES_FULL[dt.getMonth()] +
+      (ev.time ? ' · ' + horaLabel(ev.time) : '') + ' · horário de Brasília</div>' +
+      (ev.desc ? '<div class="ev-desc">' + esc(ev.desc) + '</div>' : '') +
+      '<a class="gcal-btn" href="' + gcalLink(ev) + '" target="_blank" rel="noopener noreferrer">Adicionar ao Google Agenda</a>' +
+      (isFounder(me()) ? '<button class="ev-remove" data-ev-del="' + ev.id + '">excluir evento</button>' : '');
+    eventModal.hidden = false;
+  }
+
+  document.getElementById('cal-grid').addEventListener('click', e => {
+    const chip = e.target.closest('[data-ev-open]');
+    if (chip) openEvent(+chip.dataset.evOpen);
+  });
+
+  eventModal.addEventListener('click', e => {
+    if (e.target === eventModal) { eventModal.hidden = true; return; }
+    const del = e.target.closest('[data-ev-del]');
+    if (del) {
+      if (!confirm('Excluir esse evento?')) return;
+      saveEvents(loadEvents().filter(ev => ev.id !== +del.dataset.evDel));
+      eventModal.hidden = true;
+      renderCal();
+      renderEvList();
+    }
+  });
+
+  const evForm = document.getElementById('ev-form');
+
+  document.getElementById('ev-add').addEventListener('click', () => {
+    evForm.hidden = false;
+    document.getElementById('ev-date').value = isoDate(new Date());
+    document.getElementById('ev-title').focus();
+  });
+
+  document.getElementById('ev-cancel').addEventListener('click', () => { evForm.hidden = true; });
+
+  document.getElementById('ev-save').addEventListener('click', () => {
+    const title = document.getElementById('ev-title').value.trim();
+    const date = document.getElementById('ev-date').value;
+    if (!title || !date) { showToast('Preencha título e data'); return; }
+    const evs = loadEvents();
+    evs.push({
+      id: Date.now(),
+      title,
+      date,
+      time: document.getElementById('ev-time').value,
+      desc: document.getElementById('ev-desc').value.trim()
+    });
+    saveEvents(evs);
+    evForm.hidden = true;
+    document.getElementById('ev-title').value = '';
+    document.getElementById('ev-desc').value = '';
+    document.getElementById('ev-time').value = '';
+    renderCal();
+    renderEvList();
+    showToast('Evento criado!');
+  });
+
+  document.getElementById('ev-list').addEventListener('click', e => {
+    const del = e.target.closest('[data-ev-del]');
+    if (!del) return;
+    if (!confirm('Excluir esse evento?')) return;
+    saveEvents(loadEvents().filter(ev => ev.id !== +del.dataset.evDel));
+    renderCal();
+    renderEvList();
   });
 
   /* ---------- sparks claude perambulando embaixo ---------- */
